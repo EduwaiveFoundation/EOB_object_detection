@@ -1,4 +1,4 @@
-#!/home/navneet/tutorial/env/bin/python
+#!/home/navneet/PDF2JPEG/env/bin/python
 
 import sys
 import getopt
