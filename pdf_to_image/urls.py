@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
-from convert import views
+from pdf_to_image.convert import views
 from rest_framework import routers
 
 urlpatterns = [

@@ -112,3 +112,51 @@ INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.3.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.11.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.6.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.7.pdf,converted
+INFO, started
+INFO, started
+INFO, started
+INFO, started
+INFO, started
+INFO, started
+ERROR, Internal Server Error: /converted/
+Traceback (most recent call last):
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 483, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 443, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/sgrover/pdf2jpeg/pdf_to_image/convert/views.py", line 20, in post
+    PDF2JPEG.main(request.data['bucket'],request.data['file'])
+NameError: name 'PDF2JPEG' is not defined
+INFO, started
+INFO, main started
+INFO, ERROR
+INFO, started
+INFO, started
+INFO, main started
+INFO, <class 'Exception'>
+INFO, ERROR
+INFO, started
+INFO, started
+INFO, started
+INFO, main started
+INFO, <class 'Exception'>
+INFO, ERROR
+INFO, started
+INFO, started
+INFO, main started
+INFO, Mar-08_07:53,edupatentreco/244289/244289_2017.pdf,converted
+INFO, started
+INFO, main started
+INFO, Mar-08_08:59,edupatentreco/244289/processed_244289_2017.pdf,converted

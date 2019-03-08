@@ -8,7 +8,7 @@ from rest_framework import viewsets
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-import PDF2JPEG
+import pdf_to_image.convert.PDF2JPEG as pd
 from django.shortcuts import render
 from rest_framework.renderers import JSONRenderer
 
@@ -17,7 +17,7 @@ import os,glob
 class pdfList(APIView):
     renderer_classes = (JSONRenderer, )
     def post(self,request):
-        PDF2JPEG.main(request.data['bucket'],request.data['file'])
+        pd.main(request.data['bucket'],request.data['file'])
         try:
             x={"status":"completed"}
         except:

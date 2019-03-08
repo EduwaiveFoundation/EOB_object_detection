@@ -8,7 +8,7 @@ logging.info("started")
 import os
 import time
 import shutil
-import config
+import pdf_to_image.convert.config as c
 import subprocess
 import multiprocessing
 from itertools import product
@@ -42,7 +42,7 @@ def convert(d):
                         path2=path2[:idx+1]+"processed_"+path2[idx+1:]
                         new_path=path1[:l+1]+path2
                         subprocess.call("gsutil mv gs://{} gs://{}".format(path1,new_path), shell=True)
-    except Exception,err:
+    except Exception as err:
         logging.info("{},{}".format(err,d))
     
 def main(bucket,file1):
@@ -57,7 +57,7 @@ def main(bucket,file1):
         #file1="Anthem-BlueCross"
         #dest_bucket="unlabelled"
         bucket1=bucket
-        dest_bucket2=config.dest_bucket.replace(" ","\\ ")
+        dest_bucket2=c.dest_bucket.replace(" ","\\ ")
         dest_local=bucket
         #print("nO")
         #bucket="sampleeob"
@@ -87,7 +87,7 @@ def main(bucket,file1):
         d=os.listdir(rootdir)
         p = Pool(5)
         p.map(convert,d)
-    except Exception,err:
+    except Exception as err:
             logging.info(err)
             logging.info("ERROR")
             #print("started5")
