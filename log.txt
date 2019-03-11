@@ -112,51 +112,494 @@ INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.3.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.11.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.6.pdf,converted
 INFO, Mar-07_12:34,sampleeob/SAG-AFTRA/SAG.7.pdf,converted
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 876
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /storage/v1/b/sampleeob/o/Beacon%2FBeacon.6.pdf/copyTo/b/sampleeob/o/Beacon%2Fprocessed_Beacon.6.pdf HTTP/1.1" 200 872
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 820
+INFO, Mar-10_16:48,sampleeob/Beacon/Beacon.8.pdf,converted
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, https://www.googleapis.com:443 "DELETE /storage/v1/b/sampleeob/o/Beacon%2FBeacon.6.pdf HTTP/1.1" 204 0
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 876
+INFO, Mar-10_16:48,sampleeob/Beacon/Beacon.10 copy.pdf,converted
+
+INFO, main started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-Blue-Cross&projection=noAcl HTTP/1.1" 200 31
+INFO, started
+INFO, main started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-Blue-Cross&projection=noAcl HTTP/1.1" 200 31
 INFO, started
 INFO, started
 INFO, started
+INFO, main started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-Blue-Cross&projection=noAcl HTTP/1.1" 200 31
+INFO, ended
 INFO, started
-INFO, started
-INFO, started
+INFO, main started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-BlueCross&projection=noAcl HTTP/1.1" 200 1695
+DEBUG, https://www.googleapis.com:443 "GET /download/storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf?generation=1552284065484490&alt=media HTTP/1.1" 200 20936149
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+INFO, Mar-11_06:18,sampleeob/Anthem-BlueCross/Anthem.12.pdf,converted
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf/copyTo/b/sampleeob/o/Anthem-BlueCross%2Fprocessed_Anthem.12.pdf HTTP/1.1" 200 917
+DEBUG, https://www.googleapis.com:443 "DELETE /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf HTTP/1.1" 204 0
+INFO, ended
+INFO, main started
 ERROR, Internal Server Error: /converted/
 Traceback (most recent call last):
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
     response = get_response(request)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 126, in _get_response
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
     response = self.process_exception_by_middleware(e, request)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 124, in _get_response
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
     return view_func(*args, **kwargs)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/django/views/generic/base.py", line 68, in view
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/django/views/generic/base.py", line 68, in view
     return self.dispatch(request, *args, **kwargs)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 483, in dispatch
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 495, in dispatch
     response = self.handle_exception(exc)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 443, in handle_exception
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 455, in handle_exception
     self.raise_uncaught_exception(exc)
-  File "/home/sgrover/Envs/django-venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in dispatch
+  File "/home/navneet/PDF2JPEG/env/local/lib/python2.7/site-packages/rest_framework/views.py", line 492, in dispatch
     response = handler(request, *args, **kwargs)
-  File "/home/sgrover/pdf2jpeg/pdf_to_image/convert/views.py", line 20, in post
-    PDF2JPEG.main(request.data['bucket'],request.data['file'])
-NameError: name 'PDF2JPEG' is not defined
-INFO, started
+  File "/home/navneet/git_workspace/EOB_object_detection/pdf_to_image/convert/views.py", line 20, in post
+    pd.main(request.data['bucket'],request.data['file'])
+  File "/home/navneet/git_workspace/EOB_object_detection/pdf_to_image/convert/PDF2JPEG.py", line 87, in main
+    rootdir = "{}/{}".format(bucket1,file1)
+NameError: global name 'bucket1' is not defined
 INFO, main started
-INFO, ERROR
-INFO, started
-INFO, started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-BlueCross&projection=noAcl HTTP/1.1" 200 1695
+DEBUG, https://www.googleapis.com:443 "GET /download/storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf?generation=1552285233793821&alt=media HTTP/1.1" 200 20936149
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+INFO, Mar-11_06:21,sampleeob/Anthem-BlueCross/Anthem.12.pdf,converted
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf/copyTo/b/sampleeob/o/Anthem-BlueCross%2Fprocessed_Anthem.12.pdf HTTP/1.1" 200 917
+DEBUG, https://www.googleapis.com:443 "DELETE /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf HTTP/1.1" 204 0
 INFO, main started
-INFO, <class 'Exception'>
-INFO, ERROR
-INFO, started
-INFO, started
-INFO, started
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-BlueCross&projection=noAcl HTTP/1.1" 200 1735
+INFO, Anthem-BlueCross/processed_Anthem.12.pdf already processed
 INFO, main started
-INFO, <class 'Exception'>
-INFO, ERROR
-INFO, started
-INFO, started
-INFO, main started
-INFO, Mar-08_07:53,edupatentreco/244289/244289_2017.pdf,converted
-INFO, started
-INFO, main started
-INFO, Mar-08_08:59,edupatentreco/244289/processed_244289_2017.pdf,converted
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob/o?prefix=Anthem-BlueCross&projection=noAcl HTTP/1.1" 200 1695
+DEBUG, https://www.googleapis.com:443 "GET /download/storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf?generation=1552285551872813&alt=media HTTP/1.1" 200 20936149
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /upload/storage/v1/b/sampleeob/o?uploadType=multipart HTTP/1.1" 200 828
+INFO, Mar-11_06:26,sampleeob/Anthem-BlueCross/Anthem.12.pdf,converted
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Making request: GET http://169.254.169.254
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/project/project-id
+DEBUG, Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true
+DEBUG, Starting new HTTP connection (1): metadata.google.internal:80
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/default/?recursive=true HTTP/1.1" 200 144
+DEBUG, Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token
+DEBUG, http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/366975600443-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 192
+DEBUG, Starting new HTTPS connection (1): www.googleapis.com:443
+DEBUG, https://www.googleapis.com:443 "GET /storage/v1/b/sampleeob?projection=noAcl HTTP/1.1" 200 429
+DEBUG, https://www.googleapis.com:443 "POST /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf/copyTo/b/sampleeob/o/Anthem-BlueCross%2Fprocessed_Anthem.12.pdf HTTP/1.1" 200 917
+DEBUG, https://www.googleapis.com:443 "DELETE /storage/v1/b/sampleeob/o/Anthem-BlueCross%2FAnthem.12.pdf HTTP/1.1" 204 0

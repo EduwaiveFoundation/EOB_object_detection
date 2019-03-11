@@ -1,3 +1,0 @@
-pip install django
-pip install djangorestframework
-Pip install pdf2image
