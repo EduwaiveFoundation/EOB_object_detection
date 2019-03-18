@@ -22,5 +22,5 @@ from rest_framework import routers
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^converted/', views.pdfList.as_view()),
+    url(r'^pdf_to_jpg/', views.pdfList.as_view()),
 ]

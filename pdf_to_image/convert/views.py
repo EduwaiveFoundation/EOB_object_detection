@@ -9,18 +9,29 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import pdf_to_image.convert.PDF2JPEG as pd
+from django.http import HttpResponse
+from rest_framework import status
 from django.shortcuts import render
 from rest_framework.renderers import JSONRenderer
-
 import os,glob
+
+def get_var_value(filename="job_id.txt"):
+        with open(filename, "a+") as f:
+            f.seek(0)
+            val = int(f.read() or 0) + 1
+            f.seek(0)
+            f.truncate()
+            f.write(str(val))
+            return val
 
 class pdfList(APIView):
     renderer_classes = (JSONRenderer, )
     def post(self,request):
-        pd.main(request.data['bucket'],request.data['file'])
+        job_id_counter = get_var_value()
+        error_info=pd.main(request.data['bucket'],request.data['file'])
         try:
-            x={"status":"completed"}
-        except:
-            x={"status":"error"}
+            json_response={"status":"OK","job_id":job_id_counter,"error_info":error_info}
+        except exception as err:
+            json_response={"status":"ERROR", "job_id":job_id_counter,"error_info":error_info}
             
-        return Response((x), status=200)
+        return Response((json_response_200),status=200)

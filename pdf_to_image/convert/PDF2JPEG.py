@@ -5,123 +5,145 @@ logging.basicConfig(level=logging.DEBUG,filename='log.txt', filemode='a', \
                             format='%(levelname)s, %(message)s')
 import os
 import time
+import tempfile
 import shutil
-import pdf_to_image.convert.config as c
-import subprocess
+#import pdf_to_image.convert.config as c
 import multiprocessing
 from itertools import product
 from multiprocessing import Pool
 from pdf2image import convert_from_path
 from google.cloud import storage
+import apche_beam_strategy as apache 
 
-def upload_blob(bucket_name, source_file_name, destination_blob_name):
-    """Uploads a file to the bucket."""
+import apache_beam as beam
+from apache_beam.io import ReadFromText
+from apache_beam.io import WriteToText
+from apache_beam.options.pipeline_options import PipelineOptions
+from apache_beam.options.pipeline_options import SetupOptions
+
+def list_blobs(bucket_name,pdf_file_path):
+    pdf_list=[]
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
-
-    blob.upload_from_filename(source_file_name)
-    
-def rename_blob(bucket_name, blob_name, new_name):
-    """Renames a blob."""
-    storage_client = storage.Client()
-    bucket = storage_client.get_bucket(bucket_name)
-    blob = bucket.blob(blob_name)
-
-    new_blob = bucket.rename_blob(blob, new_name)
-    
-def download_blob(bucket_name, source_blob_name):
-    """Downloads a blob from the bucket."""
-    storage_client = storage.Client()
-    bucket = storage_client.get_bucket(bucket_name)
-    #list all the blobs from the given folder in the bucket
-    blobs = bucket.list_blobs(prefix="{}".format(source_blob_name))
+    blobs = bucket.list_blobs(prefix="{}".format(pdf_file_path))
     for blob in blobs:
-        #getting name of files from complete path of that file
-        name=blob.name.split("/")[-1]
-        if name.startswith("processed_"):
-            logging.info("{} already processed".format(blob.name))
-        elif name.endswith(".pdf"):
-            blob.download_to_filename("{}/{}".format(bucket1,blob.name))
+        #path="{}/{}".format(bucket_name,blob.name)
+        if(blob.name.endswith(".pdf")):
+            pdf_list.append(blob.name)
+        #print path
+    return pdf_list
+        
+def input_location_type(input_path):
+    if input_path.startswith("gs://"):
+        input_type="gcs"
+        input_bucket=input_path.replace("gs://","").split("/",1)[0]
+        pdf_file_path=input_path.replace("gs://","").split("/",1)[-1]
+    elif input_path.startswith("s3://"):
+        input_type="s3"
+        input_bucket=input_path.replace("s3://","").split("/",1)[0]
+        pdf_file_path=input_path.replace("s3://","").split("/",1)[-1]
+    else:
+        input_type="local"
+        input_bucket=None
+        pdf_file_path=input_path
+    return input_type,input_bucket,pdf_file_path
+
+def output_location_type(output_path):
+    if output_path.startswith("gs://"):
+        output_type="gcs"
+        output_bucket=output_path.replace("gs://","").split("/",1)[0]
+        images_folder_path=output_path.replace("gs://","").split("/",1)[-1]
+    elif output_path.startswith("s3://"):
+        output_type="s3"
+        output_bucket=output_path.replace("s3://","").split("/",1)[0]
+        images_folder_path=output_path.replace("s3://","").split("/",1)[-1]
+    else:
+        output_type="local"
+        output_bucket=None
+        images_folder_path=output_path
+    return output_type,output_bucket,images_folder_path
 
 
-def convert(d):
-    try:
-        #path of pdf file
-        pdf_dir= rootdir + "/" + d
-        path="{}".format(pdf_dir)
-        if d.endswith(".pdf"):
-                        pages=convert_from_path(path,300) 
-                        #pdf_file gives name of pdf file
-                        pdf_file=d[:-4]
-                        #make a directory JPEGs->pdf_file to save images of all pages of the particular pdf file
-                        os.mkdir("%s/%s"%("JPEGs",pdf_file))
-                        path="{}/{}".format("JPEGs",pdf_file)
-                        for page in pages:
-                            page.save("%s/%s-page%d.jpg"%(path,pdf_file,pages.index(page)),"JPEG")
-                        files=os.listdir("{}".format(path))
-                        for f in files:
-                            #Function to upload all the images of pdf file in the bucket
-                            upload_blob(bucket1,"{}/{}/{}".format("JPEGs",pdf_file,f), 
-                                        "{}/{}/{}".format(dest_folder,pdf_file,f))
-                        #subprocess.call("gsutil -m cp -r {} {}".format(path,destination), shell=True)
-                        logging.info("{},{},converted".format(timestamp,pdf_dir))
-                        path1="{}/{}".format(file1,d)
-                        idx=path1.rfind("/")
-                        #Adding processed keyword before pdf_file name 
-                        path2=path1[:idx+1]+"processed_"+path1[idx+1:]
-                        #Renaming function to change pdf_file name to processed_pdf_file name
-                        rename_blob(bucket1,"{}/{}".format(file1,d),"{}".format(path2))
-                       
-    except Exception as err:
-        logging.error("{},{},{}".format(timestamp,d,err))
-    
-def main(bucket2,file2):
+
+
+def main(input_path,output_path):
+    print 1
     logging.info("main started")
-    global bucket1
-    global timestamp
-    global file1
+    #global bucket1
+    #global timestamp
+    #global file1
     #dest_folder is location in bucket where all the jpegs will be stored
-    global dest_folder
-    global rootdir 
-    dest_folder="unlabelled"
-    bucket1=bucket2
-    file1=file2
-    rootdir = "{}/{}".format(bucket1,file1)
+    #global dest_folder
+    #global rootdir 
+    global error 
+    error="no error"
     t=time.localtime()
-    timestamp = time.strftime('%b-%d_%H:%M', t)
+    timestamp = time.strftime('%b-%d-%y_%H:%M:%S', t)
     try:
-        #In local we will create a folder named as bucket name to copy all the content of given folder from bucket
-        if os.path.exists("{}".format(bucket1)):
+        input_type,input_bucket,pdf_file_path=input_location_type(input_path)
+        output_type,output_bucket,images_folder_path=output_location_type(output_path)
+        print input_type
+        print input_bucket
+        print pdf_file_path
+        print output_type
+        print output_bucket
+        print images_folder_path
+        if input_type!="local":
+            input_dir = tempfile.mkdtemp()
+            if output_type!="local":
+                output_dir=tempfile.mkdtemp()
+                print input_dir
+                if input_type=="gcs" and output_type=="gcs":
+                    pdf_list=list_blobs(input_bucket,pdf_file_path)
+                    apache.gcs_pipeline(input_bucket,pdf_file_path,pdf_list,input_dir,
+                                               output_bucket,images_folder_path,output_dir)
+            shutil.rmtree(input_dir)  
+            shutil.rmtree(output_dir)
+                
+            """ if output_type!="local":
+            output_dir=tempfile.mkdtemp()
+            print output_dir
+            if output_type=="gcs":
+                apache.gcs_output_pipeline(output_bucket,images_folder_path,output_dir)
+            shutil.rmtree(output_dir)"""
+            
+        
+                
+                
+            
+        #In local we dirpath = tempfile.mkdtemp()will create a folder named as bucket name to copy all the content of given folder from bucket
+        """ if os.path.exists("{}".format(bucket1)):
             shutil.rmtree("{}".format(bucket1))
         os.mkdir("{}".format(bucket1))
         #In the local folder named as bucket,we will create another folder in which all pdf's will be stored
         #Bucket_Nmae->File_Name->PDF's
         os.mkdir("{}/{}".format(bucket1,file1))
         #This function will download contents of file(folder given as argument) to local directory made above
-        download_blob(bucket1,file1)
-        #subprocess.call("gsutil -m cp -r {} {}/".format(source,bucket2), shell=True)
+        pdf_path=[]
+        list_blobs(bucket1,file1,pdf_path)
+        dest_path="sampleeob/unlabelled"
+        os.mkdir(dest_path)
+        apache.func(pdf_path,dest_path)"""
 
-        if os.path.exists("JPEGs"):
-            shutil.rmtree('JPEGs')
-        #this directory will save all the images converted from pdf's    
-        os.mkdir("JPEGs")
- 
-        d=os.listdir(rootdir)
-        p = Pool(5)
-        #Multithreaded function to call conversion fuction given pdf file as argument to the function
-        p.map(convert,d)
+        
+        
     except Exception as err:
-            logging.error("{},{},{}".format(timestamp,file1,err))
+            logging.error("{},{}".format(timestamp,err))
+            error=err
+            
+    finally: 
+        return error         
+            
      
-    finally:
+    """finally:
         #Remove all the directories created in local machine before exiting
-        if os.path.exists("JPEGs"):                
-            shutil.rmtree('JPEGs')    
+        if os.path.exists(dest_path):                
+            shutil.rmtree(dest_path)    
         if os.path.exists(bucket1):    
-            shutil.rmtree(bucket1)
+            shutil.rmtree(bucket1)"""
        
 
         
 if __name__== "__main__":
-    main(bucket,file1)    
+    main(input_path,output_path) 
+    

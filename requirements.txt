@@ -2,3 +2,4 @@ django
 djangorestframework
 pdf2image
 google-cloud-storage
+apache-beam
