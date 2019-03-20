@@ -34,4 +34,4 @@ class pdfList(APIView):
         except exception as err:
             json_response={"status":"ERROR", "job_id":job_id_counter,"error_info":error_info}
             
-        return Response((json_response_200),status=200)
+        return Response((json_response),status=200)
