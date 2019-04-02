@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from controller import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+]
+
+#Controller URLs
+urlpatterns += [
+    url(r'^jobs/training/', views.training),
+    url(r'^jobs/prediction/', views.prediction),
+    url(r'^jobs/status/', views.status),
 ]
