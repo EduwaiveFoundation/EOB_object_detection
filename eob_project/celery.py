@@ -6,8 +6,7 @@ from django.conf import settings
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eob_project.settings')
 app = Celery('eob_project',
-    backend='amqp',
-    broker='amqp://guest@0.0.0.0//')
+    broker='redis://localhost')
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
 app.config_from_object('django.conf:settings')
