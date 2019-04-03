@@ -43,8 +43,9 @@ def _path_to_img(path,image_size=(224, 224)):
         image_string = tf.io.read_file(path)
         image_resized = _img_string_to_tensor(image_string, image_size)
         image=image_resized.numpy()
-        dict_images={path:image.tolist()}
-        return dict_images
+        #dict_images={path:image.tolist()}
+        return image.tolist()
+
     
 def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
@@ -95,24 +96,20 @@ def main(imgs_folder):
     #image_dictionary gives key as path to image and value as its array
     image_dictionary={}
     for image in images_path:
-        image_dictionary.update(_path_to_img(image))
-        #path to saved model
+        image_dictionary[image] = _path_to_img(image)
+
+    #TODO
+    #need to write a function which automatically used latest model from the model_directory
+    #path to saved model
     export_dir = 'Classification1/classification_data/run1/export/exporter/1554210882' 
     #make_predictions
     output=prediction(export_dir,image_dictionary) 
     #image_label gives path to image with its label
     #print output
-    image_label={}
-    for i in range(len(images_path)):
-        key=images_path[i]
-        if output[i]<0:
-            value="Not_Useful_Image"
-        else:
-            value="Useful_Image"
-        image_label.update({key:value})   
+    image_label={key:('Not_Useful_Image' if value < 0 else 'Useful_Image') for key,value in zip(image_dictionary.keys(), output) } 
     with open('eob_classification_result.json', 'w') as outfile:  
         json.dump(image_label, outfile)
-    #print image_label    
+    print image_label    
     return image_label
 
 if __name__ == '__main__':
@@ -122,6 +119,7 @@ if __name__ == '__main__':
       help='location to images which needs to be classified',
       required=True
   )
+    
     args = parser.parse_args()
     main(imgs_folder=args.img_path)
 
