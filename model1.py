@@ -6,7 +6,24 @@ from google.cloud import storage
 tf.logging.set_verbosity(tf.logging.DEBUG)
 
 l = tf.keras.layers
-
+def download_blob(bucket_name, source_blob_name):
+    """Downloads a blob from the bucket."""
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(bucket_name)
+    for f in source_blob_name:
+        blob = bucket.blob(f)
+        directories=f.split("/")
+        no_dir=len(directories)
+        parent_dir=""
+        for i in range(no_dir-1):
+            if not parent_dir:
+                parent_dir=parent_dir+directories[i] 
+            else:
+                parent_dir=parent_dir+"/"+directories[i]
+            if(not os.path.exists(parent_dir)):
+                os.mkdir(parent_dir)
+        if f.endswith(".jpg"):
+            blob.download_to_filename(f)
 def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
     storage_client = storage.Client()
@@ -48,7 +65,7 @@ def _img_string_to_tensor(image_string, image_size=(299, 299)):
     
     return image_resized
 
-def make_dataset(file_pattern, image_size=(299, 299), shuffle=False, batch_size=64, num_epochs=None, buffer_size=4096):
+def make_dataset(file_pattern, image_size=(299, 299), shuffle=False, batch_size=64, num_epochs=2, buffer_size=4096):
     """Makes a dataset reading the input images given the file pattern
     
     Args:
@@ -90,17 +107,17 @@ def make_dataset(file_pattern, image_size=(299, 299), shuffle=False, batch_size=
     #opt.experimental_autotune = True
     #opt.experimental_map_and_batch_fusion = True
     #opt.experimental_shuffle_and_repeat_fusion = True
-    bucket=file_pattern.replace("gs://","").split("/")[0]
+    """bucket=file_pattern.replace("gs://","").split("/")[0]
     image_dir=file_pattern.replace("gs://","").split("/",1)[-1]
     images_list=list_images(bucket,image_dir)
     train_imgs = tf.constant(images_list)
-    dataset = tf.data.Dataset.from_tensor_slices(train_imgs)
-    #dataset = tf.data.Dataset.list_files(file_pattern)
+    dataset = tf.data.Dataset.from_tensor_slices(train_imgs)"""
+    dataset = tf.data.Dataset.list_files(file_pattern)
 
     if shuffle:
         dataset = dataset.shuffle(buffer_size)
 
-    #dataset = dataset.repeat(num_epochs)
+    dataset = dataset.repeat(num_epochs)
     dataset = dataset.map(_path_to_img)
     dataset = dataset.batch(batch_size).prefetch(buffer_size)
 
@@ -180,48 +197,58 @@ def train(data_directory,model_directory):
     
     #data_directory = get_data('Classification')
     #model_directory = 'Classification/run2'
-    bucket=data_directory.replace("gs://","").split("/")[0]
-    print "bucket:{}".format(bucket)
-    data_dir=data_directory.replace("gs://","").split("/",1)[-1]
-    print "data_dir:{}".format(data_dir)
+    if data_directory.startswith("gs://"):
+        bucket=data_directory.replace("gs://","").split("/")[0]
+        print "bucket:{}".format(bucket)
+        data_dir=data_directory.replace("gs://","").split("/",1)[-1]
+        print "data_dir:{}".format(data_dir)
+        local_dir=data_dir.split("/")[0]
+        if(not os.path.isdir(local_dir)):
+            os.mkdir(local_dir)
+        files=list_blobs(bucket,data_dir)
+        #print files
+        download_blob(bucket,files)
+    else:
+        data_dir=data_directory
     params = {
         'module_spec': 'https://tfhub.dev/google/imagenet/resnet_v2_50/feature_vector/1',
         'module_name': 'resnet_v2_50',
         'learning_rate': 1e-3,
         'train_module': False,  # Whether we want to finetune the module
-        'label_vocab': list_blobs(bucket,data_dir)
-    }
+        'label_vocab': os.listdir(os.path.join(data_dir, 'valid')) }
 
-    """ classifier = tf.estimator.Estimator(
+    classifier = tf.estimator.Estimator(
         model_fn=model_fn,
         model_dir=model_directory,
         config=run_config,
         params=params
-    )"""
+    )
 
-    classifier = tf.estimator.DNNEstimator(
+    """classifier = tf.estimator.DNNEstimator(
         head = tf.contrib.estimator.binary_classification_head(label_vocabulary=params['label_vocab']),
-        hidden_units = [32,16],
+        hidden_units = [128, 64, 32],
         feature_columns = [tf.feature_column.numeric_column('image', shape=(224, 224, 3))],
         model_dir=model_directory
-    )
+    )"""
         
     input_img_size = hub.get_expected_image_size(hub.Module(params['module_spec']))
     
-    ckpt = classifier.latest_checkpoint()
-    if ckpt != None:
-          ckpt = int(ckpt.split('.')[1].split('-')[1])  
-    else:
-          ckpt = 0
+    #ckpt = classifier.latest_checkpoint()
+    #if ckpt != None:
+     #     ckpt = int(ckpt.split('.')[1].split('-')[1])  
+    #else:
+     #     ckpt = 0
 
-    train_files = "{}/train".format(data_directory)
-    train_input_fn = lambda: make_dataset(train_files, image_size=input_img_size, batch_size=8, shuffle=True)
-    train_spec = tf.estimator.TrainSpec(train_input_fn, max_steps=100)
+    #train_files = "{}/train".format(data_directory)
+    train_files = os.path.join(data_dir, 'train', '**/*.jpg')
+    train_input_fn = lambda: make_dataset(train_files, image_size=input_img_size, batch_size=32, shuffle=True)
+    train_spec = tf.estimator.TrainSpec(train_input_fn, max_steps=1000)
     
     exporter = tf.estimator.LatestExporter('exporter', serving_input_fn)
 
-    eval_files ="{}/valid".format(data_directory)
-    eval_input_fn = lambda: make_dataset(eval_files, image_size=input_img_size, batch_size=1)
+    #eval_files ="{}/valid".format(data_directory)
+    eval_files = os.path.join(data_dir, 'valid', '**/*.jpg')
+    eval_input_fn = lambda: make_dataset(eval_files, image_size=input_img_size, batch_size=32)
     eval_spec = tf.estimator.EvalSpec(eval_input_fn,exporters=exporter)
 
     tf.estimator.train_and_evaluate(classifier, train_spec, eval_spec)
