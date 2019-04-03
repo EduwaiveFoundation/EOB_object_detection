@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.http import JsonResponse
 from django.shortcuts import render
+from .tasks import predictions
 
 # Create your views here.
 def training(request):
@@ -18,6 +19,7 @@ def prediction(request):
     """
     Job API to submit prediction job
     """
+    predictions.delay()
     response = {
         "status": "OK",
         "err": None
@@ -31,5 +33,15 @@ def status(request):
     response = {
         "status": "OK",
         "err": None
+    }
+    return JsonResponse(response)
+
+def error(request):
+    """
+    Error page
+    """
+    response = {
+        "status": 404,
+        "err": "Page doesnt exists"
     }
     return JsonResponse(response)

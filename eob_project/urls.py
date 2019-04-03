@@ -26,4 +26,5 @@ urlpatterns += [
     url(r'^jobs/training/', views.training),
     url(r'^jobs/prediction/', views.prediction),
     url(r'^jobs/status/', views.status),
+    url(r'$', views.error),
 ]
