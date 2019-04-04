@@ -75,7 +75,7 @@ def download_blob(bucket_name, source_blob_name):
                 os.mkdir(parent_dir)
         blob.download_to_filename(STAGING_AREA+"/"+f)
         local_img_path.append(STAGING_AREA+"/"+f)
-        return local_img_path
+    return local_img_path
         
 def prediction(export_dir,image_dictionary):
     with tf.Session(graph=tf.Graph()) as sess:
