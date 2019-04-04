@@ -17,7 +17,6 @@ import numpy as np
 import tensorflow as tf
 import sys
 from vars_ import *
-from vars_ import IMAGE_PATH
 
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
@@ -95,7 +94,7 @@ class predict():
                 line_thickness=8,
                 min_score_thresh=0.80)
         
-                cv2.imwrite(STAGING_AREA+"/"+'{}.jpg'.format(self.i),image)
+                cv2.imwrite(STAGING_AREA+"/"+PREDICTION_OUTPUT_PATH+"/"+'{}.jpg'.format(self.i),image)
                 self.i += 1
 
     
@@ -127,35 +126,22 @@ class predict():
     def read_from_list(self,path_list):
         batchsize=5
         for i in xrange(0, len(path_list), batchsize):
+            batchsize=min(batchsize,len(path_list)-i+1)
             batch = path_list[i:i+batchsize]
             image_expanded=[]
             for i in batch:
                 image=cv2.imread(i)
                 image=cv2.resize(image,(1000,1000))
                 image_expanded.append(image)
-                print(image.shape)
-
+                #print(image.shape)
             self.run_for_single_image(np.array(image_expanded))
-'''
-    if (classes[0][0]==2.0):
-        prediction="Not Worked"
-
-    elif (classes[0][0]==1.0):
-        prediction="Worked"
-
-    print(prediction)    
-'''
 
 
             
             
-def main(): 
-    print STAGING_AREA
-    print IMAGE_PATH
-    print FROZEN_GRAPH1
-    print NUM_CLASSES
+def main(image_list): 
     obj=predict("data/frozen_inference_graph.pb",STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
     #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
-    #obj.read_from_list(path_list)
-    pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
+    obj.read_from_list(image_list)
+    #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
 #print(pred)

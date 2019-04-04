@@ -2,10 +2,10 @@ from celery import shared_task, task
 from celery.utils.log import get_task_logger
 from celery import current_task
 import time
-from services import classification_pred
+from services import classification_pred,object_detection_pred
 from services.db_connector import DataStore
 
-from env_var import *
+from vars_ import *
 
 
 logger = get_task_logger(__name__)
@@ -50,18 +50,25 @@ def predictions(*args):
     #print (output)
     #image_label gives path to image with its label
     #print output
-    image_label={key:(CLASSIFICATION_LABEL_USEFUL if value < 0 else CLASSIFICATION_LABEL_NOT_USEFUL) for key,value in                  zip(image_dictionary.keys(), output) } 
+    image_label={key:(CLASSIFICATION_LABEL_NOT_USEFUL if value < 0 else CLASSIFICATION_LABEL_USEFUL) for key,value in                  zip(image_dictionary.keys(), output) } 
 
     logger.info("\nClassification prediction pipeline completed")
     #print (image_label)
-    
+    image_path=[]
+    for key,value in image_label.items():    # for name, age in dictionary.iteritems():  (for Python 2.x)
+        if value == CLASSIFICATION_LABEL_USEFUL:
+            image_path.append(key)
+    object_detection(image_path)        
     
     #print ("job done")
     #image_label=classification_pred.main(img_path) 
     return "Job done..."
 
-
+@task
 def object_detection(*args):
+    print "object detection prediction started"
+    object_detection_pred.main(args[0])
+    print "object detection prediction completed"
     pass
 
 
