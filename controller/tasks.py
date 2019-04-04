@@ -3,9 +3,16 @@ from celery.utils.log import get_task_logger
 from celery import current_task
 import time
 from services import classification_pred
+from services.db_connector import DataStore
+
 from env_var import *
 
+
 logger = get_task_logger(__name__)
+
+# Init Database
+# Specify KIND = ocr
+db = DataStore(kind='ocr')
 
 @shared_task
 def predictions(*args):
@@ -58,5 +65,26 @@ def object_detection(*args):
     pass
 
 
-def ocr():
+@shared_task
+def ocr(*args):
+    """
+    Perform OCR and push to DataStore
+    """
+
+    # Perform OCR
+    
+    #############################
+    # PUSH TO DATASTORE
+    # Example 
+    # data = {
+    #        "Filename" : "labelled/2019-04-04/3.jpg", #String (Mandatory) and should be path \
+    #                                                           in ref to GCS path after bucket name
+    #        "PatientName" : "Kent Strip",             #String
+    #        "BilledAmount" : "260",                   #Float
+    #        "CheckDate" : "01/03/18",                 #String 
+    #        "Claim#" : "3240956928485096",            #String
+    #     }
+    # More fields could be added...
+    # db.push(data)
+    #############################
     pass
