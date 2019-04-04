@@ -47,7 +47,7 @@ def predictions(*args):
 
     logger.info("\nClassification prediction pipeline completed")
     #print (image_label)
-    image_path.append((key if value==CLASSIFICATION_LABEL_USEFUL)for key,values in dictionary.items())
+    #image_path.append((key if value==CLASSIFICATION_LABEL_USEFUL)for key,values in dictionary.items())
     print image_path
     
     #print ("job done")
