@@ -1,3 +1,6 @@
 *.pyc
 *.vscode
 data/*
+services/utils/*
+services/core/*
+services/protos/*

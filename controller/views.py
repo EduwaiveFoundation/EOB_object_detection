@@ -2,8 +2,7 @@
 from __future__ import unicode_literals
 from django.http import JsonResponse
 from django.shortcuts import render
-from .tasks import predictions
-
+from .tasks import predictions,object_detection
 # Create your views here.
 def training(request):
     """

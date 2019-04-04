@@ -2,8 +2,8 @@ from celery import shared_task, task
 from celery.utils.log import get_task_logger
 from celery import current_task
 import time
-from services import classification_pred
-from env_var import *
+from services import classification_pred,object_detection_pred
+from vars_ import *
 
 logger = get_task_logger(__name__)
 
@@ -47,14 +47,18 @@ def predictions(*args):
 
     logger.info("\nClassification prediction pipeline completed")
     #print (image_label)
-    
+    image_path.append((key if value==CLASSIFICATION_LABEL_USEFUL)for key,values in dictionary.items())
+    print image_path
     
     #print ("job done")
     #image_label=classification_pred.main(img_path) 
     return "Job done..."
 
-
+@task
 def object_detection(*args):
+    print "object detection prediction started"
+    object_detection_pred.main()
+    print "prediction completed"
     pass
 
 
