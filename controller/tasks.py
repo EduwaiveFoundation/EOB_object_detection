@@ -2,10 +2,17 @@ from celery import shared_task, task
 from celery.utils.log import get_task_logger
 from celery import current_task
 import time
-from services import classification_pred,object_detection_pred
-from vars_ import *
+from services import classification_pred
+from services.db_connector import DataStore
+
+from env_var import *
+
 
 logger = get_task_logger(__name__)
+
+# Init Database
+# Specify KIND = ocr
+db = DataStore(kind='ocr')
 
 @shared_task
 def predictions(*args):
@@ -47,20 +54,37 @@ def predictions(*args):
 
     logger.info("\nClassification prediction pipeline completed")
     #print (image_label)
-    #image_path.append((key if value==CLASSIFICATION_LABEL_USEFUL)for key,values in dictionary.items())
-    print image_path
+    
     
     #print ("job done")
     #image_label=classification_pred.main(img_path) 
     return "Job done..."
 
-@task
+
 def object_detection(*args):
-    print "object detection prediction started"
-    object_detection_pred.main()
-    print "prediction completed"
     pass
 
 
-def ocr():
+@shared_task
+def ocr(*args):
+    """
+    Perform OCR and push to DataStore
+    """
+
+    # Perform OCR
+    
+    #############################
+    # PUSH TO DATASTORE
+    # Example 
+    # data = {
+    #        "Filename" : "labelled/2019-04-04/3.jpg", #String (Mandatory) and should be path \
+    #                                                           in ref to GCS path after bucket name
+    #        "PatientName" : "Kent Strip",             #String
+    #        "BilledAmount" : "260",                   #Float
+    #        "CheckDate" : "01/03/18",                 #String 
+    #        "Claim#" : "3240956928485096",            #String
+    #     }
+    # More fields could be added...
+    # db.push(data)
+    #############################
     pass
