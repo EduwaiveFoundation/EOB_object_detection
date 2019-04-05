@@ -16,6 +16,8 @@ import cv2
 import numpy as np
 import tensorflow as tf
 import sys
+from PIL import Image
+from matplotlib import pyplot as plt
 from vars_ import *
 
 # This is needed since the notebook is stored in the object_detection folder.
@@ -60,12 +62,12 @@ class predict():
             sess = tf.Session(graph=self.detection_graph)
             return sess    
     
-    def run_for_single_image(self,image_expanded):
+    def run_for_single_image(self,image_expanded,batch):
         # Define input and output tensors (i.e. data) for the object detection classifier
 
         # Input tensor is the image
         image_tensor = self.detection_graph.get_tensor_by_name('image_tensor:0')
-
+        ocr_list=[]
         # Output tensors are the detection boxes, scores, and classes
         # Each box represents a part of the image where a particular object was detected
         detection_boxes = self.detection_graph.get_tensor_by_name('detection_boxes:0')
@@ -82,8 +84,10 @@ class predict():
             [detection_boxes, detection_scores, detection_classes, num_detections],
             feed_dict={image_tensor: image_expanded})
       
-        for image, box, score, class_ in zip(image_expanded, boxes, scores, classes):
-            
+        for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
+                image1 = Image.open(image_path)
+                im_width, im_height = image1.size
+                
                 vis_util.visualize_boxes_and_labels_on_image_array(
                 image,
                 np.squeeze(box),
@@ -93,9 +97,16 @@ class predict():
                 use_normalized_coordinates=True,
                 line_thickness=8,
                 min_score_thresh=0.80)
-        
-                cv2.imwrite(STAGING_AREA+"/"+PREDICTION_OUTPUT_PATH+"/"+'{}.jpg'.format(self.i),image)
+                bounding_boxes_info = []
+                for box,class_,score in zip(box[score>=0.2],class_[score>=0.2],score):
+                    ocr_inputs={'box':box,'class_':class_,'score':score}
+                    bounding_boxes_info.append(ocr_inputs)
+                    
+                #print image_path
+                cv2.imwrite(image_path,image)
+                ocr_list.append({'image_path': image_path, 'bounding_box_info':bounding_boxes_info})
                 self.i += 1
+        return ocr_list     
 
     
     def draw_vis(self,image,boxes,classes,scores):
@@ -124,24 +135,30 @@ class predict():
         
     
     def read_from_list(self,path_list):
+        ocr=[]
         batchsize=5
         for i in xrange(0, len(path_list), batchsize):
             batchsize=min(batchsize,len(path_list)-i+1)
             batch = path_list[i:i+batchsize]
             image_expanded=[]
+            image_list=[]
             for i in batch:
                 image=cv2.imread(i)
                 image=cv2.resize(image,(1000,1000))
                 image_expanded.append(image)
-                #print(image.shape)
-            self.run_for_single_image(np.array(image_expanded))
+                
+            ocr_list= self.run_for_single_image(np.array(image_expanded),batch)
+            ocr.extend(ocr_list)
+            #print ocr_list
+        return ocr    
 
 
             
             
 def main(image_list): 
-    obj=predict("data/frozen_inference_graph.pb",STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
+    obj=predict(STAGING_AREA+"/"+FROZEN_GRAPH1,STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
     #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
-    obj.read_from_list(image_list)
+    category_index=obj.category_index  
+    ocr=obj.read_from_list(image_list)
     #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
-#print(pred)
+    return category_index,ocr

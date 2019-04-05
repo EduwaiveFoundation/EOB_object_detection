@@ -2,7 +2,7 @@ from celery import shared_task, task
 from celery.utils.log import get_task_logger
 from celery import current_task
 import time
-from services import classification_pred,object_detection_pred
+from services import classification_pred,object_detection_pred,ocr_eob
 from services.db_connector import DataStore
 
 from vars_ import *
@@ -67,8 +67,11 @@ def predictions(*args):
 @task
 def object_detection(*args):
     print "object detection prediction started"
-    object_detection_pred.main(args[0])
+    category_index,bb_info=object_detection_pred.main(args[0])
+    #print category_index
+    #print ocr
     print "object detection prediction completed"
+    ocr(bb_info,category_index)
     pass
 
 
@@ -77,6 +80,12 @@ def ocr(*args):
     """
     Perform OCR and push to DataStore
     """
+    print "ocr started"
+    ocr_data=ocr_eob.main(args[0],args[1])
+    print ocr_data
+    for data in ocr_data:
+        db.post(data)
+    print "ocr ended"
 
     # Perform OCR
     
