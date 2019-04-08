@@ -2,11 +2,10 @@ from celery import shared_task, task
 from celery.utils.log import get_task_logger
 from celery import current_task
 import time
-from services import classification_pred,object_detection_pred,ocr_eob
+from services import classification_pred,object_detection_pred,ocr_eob,move_files
 from services.db_connector import DataStore
 
 from vars_ import *
-
 
 logger = get_task_logger(__name__)
 
@@ -86,7 +85,7 @@ def ocr(*args):
     for data in ocr_data:
         db.post(data)
     print "ocr ended"
-
+    move()
     # Perform OCR
     
     #############################
@@ -104,3 +103,10 @@ def ocr(*args):
     # db.push(data)
     #############################
     pass
+
+@shared_task
+def move(*args):
+    print "moving files to labelled"
+    move_files.main()
+    print "files moved to labelled folder"
+    

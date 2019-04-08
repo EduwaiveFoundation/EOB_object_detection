@@ -1,4 +1,5 @@
-IMAGE_PATH="gs://sampleeob/unlabelled/Anthem.10/"
+#TODO: fetch latest files automatiocally for prediction (LOGS)
+IMAGE_PATH="gs://testeob/unlabelled/2019-03-16/Anthem.13/"
 INPUT_TENSOR="dense/BiasAdd:0"
 OUTPUT_TENSOR="Placeholder:0"
 CLASSIFICATION_LABEL_USEFUL="Useful_Image"

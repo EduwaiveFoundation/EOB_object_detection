@@ -19,13 +19,23 @@ import sys
 from PIL import Image
 from matplotlib import pyplot as plt
 from vars_ import *
-
+from pascal_voc_writer import Writer
+from google.cloud import storage
 # This is needed since the notebook is stored in the object_detection folder.
 sys.path.append("..")
 #os.getcwd()
 # Import utilites
 from utils import label_map_util
 from utils import visualization_utils as vis_util
+
+def upload_blob(bucket_name, source_file_name, destination_blob_name):
+    """Uploads a file to the bucket."""
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(bucket_name)
+    blob = bucket.blob(destination_blob_name)
+
+    blob.upload_from_filename(source_file_name)
+
 class predict():
     def __init__(self,path_frozen_graph,path_labels,num_classes):   
         # Path to frozen detection graph .pb file, which contains the model that is used
@@ -62,7 +72,7 @@ class predict():
             sess = tf.Session(graph=self.detection_graph)
             return sess    
     
-    def run_for_single_image(self,image_expanded,batch):
+    def run_for_single_image(self,image_expanded,batch,category_index):
         # Define input and output tensors (i.e. data) for the object detection classifier
 
         # Input tensor is the image
@@ -83,7 +93,6 @@ class predict():
         (boxes, scores, classes, num) = self.sess.run(
             [detection_boxes, detection_scores, detection_classes, num_detections],
             feed_dict={image_tensor: image_expanded})
-      
         for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
                 image1 = Image.open(image_path)
                 im_width, im_height = image1.size
@@ -98,12 +107,28 @@ class predict():
                 line_thickness=8,
                 min_score_thresh=0.80)
                 bounding_boxes_info = []
+                
+                #saving bb info in xmls
+                # Writer(path, width, height)
+                writer = Writer(image_path, im_width,im_height)
+                
                 for box,class_,score in zip(box[score>=0.2],class_[score>=0.2],score):
                     ocr_inputs={'box':box,'class_':class_,'score':score}
-                    bounding_boxes_info.append(ocr_inputs)
-                    
+                    bounding_boxes_info.append(ocr_inputs)                    
+                   
+                    # ::addObject(name, xmin, ymin, xmax, ymax) to xml
+                    writer.addObject(category_index[class_]['name'], box[1],box[0],box[3],box[2])
+                                        
                 #print image_path
                 cv2.imwrite(image_path,image)
+                # ::save(path)
+                path=image_path.replace(".jpg",".xml")                      
+                writer.save(path)
+                
+                bucket=IMAGE_PATH.replace("gs://","").split("/")[0]
+                destination_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
+                destination_path=destination_path+path.split("/")[-1]
+                upload_blob(bucket,path, destination_path)
                 ocr_list.append({'image_path': image_path, 'bounding_box_info':bounding_boxes_info})
                 self.i += 1
         return ocr_list     
@@ -134,7 +159,7 @@ class predict():
         return var
         
     
-    def read_from_list(self,path_list):
+    def read_from_list(self,path_list,category_index):
         ocr=[]
         batchsize=5
         for i in xrange(0, len(path_list), batchsize):
@@ -147,7 +172,7 @@ class predict():
                 image=cv2.resize(image,(1000,1000))
                 image_expanded.append(image)
                 
-            ocr_list= self.run_for_single_image(np.array(image_expanded),batch)
+            ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index)
             ocr.extend(ocr_list)
             #print ocr_list
         return ocr    
@@ -159,6 +184,6 @@ def main(image_list):
     obj=predict(STAGING_AREA+"/"+FROZEN_GRAPH1,STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
     #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
     category_index=obj.category_index  
-    ocr=obj.read_from_list(image_list)
+    ocr=obj.read_from_list(image_list,category_index)
     #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
     return category_index,ocr
