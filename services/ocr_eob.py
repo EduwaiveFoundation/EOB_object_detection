@@ -7,6 +7,7 @@ from google.cloud import vision
 from PIL import Image
 from matplotlib import pyplot as plt
 from vars_ import *
+#from controller.tasks import IMAGE_PATH
 client = vision.ImageAnnotatorClient()
 
 #class OCR:
@@ -21,6 +22,7 @@ def main(bounding_box_info,category_index):
         #data dictionary is used for storing the extracted information for each field
         data=dict()
         data['Filename']=file_name.replace(STAGING_AREA+"/","")
+        data['Filename']=data['Filename'].replace("unlabelled","labelled")
         
         for boxes_info in image_info['bounding_box_info']:
                 

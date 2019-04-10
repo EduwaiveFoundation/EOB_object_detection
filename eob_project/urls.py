@@ -24,7 +24,7 @@ urlpatterns = [
 #Controller URLs
 urlpatterns += [
     url(r'^jobs/training/', views.training),
-    url(r'^jobs/prediction/', views.prediction),
+    url(r'^jobs/prediction/', views.List.as_view()),
     url(r'^jobs/status/', views.status),
     url(r'$', views.error),
 ]

@@ -1,5 +1,7 @@
 from google.cloud import storage
 from vars_ import *
+#from controller.tasks import IMAGE_PATH
+
 def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
     storage_client = storage.Client()
@@ -29,10 +31,14 @@ def delete_blob(bucket_name, blob_name):
 
     blob.delete()   
     
-def main():
+def main(func,IMAGE_PATH):
     bucket=IMAGE_PATH.replace("gs://","").split("/")[0]
     source_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
     image_list=list_blobs(bucket,source_path)
     for image in image_list:
         destination_path=image.replace("unlabelled","labelled")
-        copy_blob(bucket, image , destination_path)
+        if(func=="move"):
+            copy_blob(bucket, image , destination_path)
+        if(func=="delete"):
+            delete_blob(bucket,image)
+                

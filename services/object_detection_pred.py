@@ -19,6 +19,7 @@ import sys
 from PIL import Image
 from matplotlib import pyplot as plt
 from vars_ import *
+#from controller.tasks import IMAGE_PATH
 from pascal_voc_writer import Writer
 from google.cloud import storage
 # This is needed since the notebook is stored in the object_detection folder.
@@ -32,6 +33,8 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
     """Uploads a file to the bucket."""
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(bucket_name)
+    destination_blob_name=source_file_name.replace(STAGING_AREA+"/","")
+    destination_blob_name.replace("unlabelled","labelled")
     blob = bucket.blob(destination_blob_name)
 
     blob.upload_from_filename(source_file_name)
@@ -72,9 +75,9 @@ class predict():
             sess = tf.Session(graph=self.detection_graph)
             return sess    
     
-    def run_for_single_image(self,image_expanded,batch,category_index):
+    def run_for_single_image(self,image_expanded,batch,category_index,IMAGE_PATH):
         # Define input and output tensors (i.e. data) for the object detection classifier
-
+        print "inside run_from_single_image"
         # Input tensor is the image
         image_tensor = self.detection_graph.get_tensor_by_name('image_tensor:0')
         ocr_list=[]
@@ -96,7 +99,7 @@ class predict():
         for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
                 image1 = Image.open(image_path)
                 im_width, im_height = image1.size
-                
+                print image
                 vis_util.visualize_boxes_and_labels_on_image_array(
                 image,
                 np.squeeze(box),
@@ -159,9 +162,10 @@ class predict():
         return var
         
     
-    def read_from_list(self,path_list,category_index):
+    def read_from_list(self,path_list,category_index,IMAGE_PATH):
         ocr=[]
         batchsize=5
+        print "inside read_from_list"
         for i in xrange(0, len(path_list), batchsize):
             batchsize=min(batchsize,len(path_list)-i+1)
             batch = path_list[i:i+batchsize]
@@ -172,7 +176,7 @@ class predict():
                 image=cv2.resize(image,(1000,1000))
                 image_expanded.append(image)
                 
-            ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index)
+            ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index,IMAGE_PATH)
             ocr.extend(ocr_list)
             #print ocr_list
         return ocr    
@@ -180,10 +184,12 @@ class predict():
 
             
             
-def main(image_list): 
+def main(image_list,IMAGE_PATH): 
+    print "Inside main"
     obj=predict(STAGING_AREA+"/"+FROZEN_GRAPH1,STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
     #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
     category_index=obj.category_index  
-    ocr=obj.read_from_list(image_list,category_index)
+    ocr=obj.read_from_list(image_list,category_index,IMAGE_PATH)
     #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
+    print "completed"
     return category_index,ocr

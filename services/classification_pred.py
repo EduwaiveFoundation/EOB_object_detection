@@ -3,6 +3,7 @@ import os
 import tensorflow as tf
 from google.cloud import storage
 from env_var import *
+#from controller.tasks import IMAGE_PATH
 #l = tf.keras.layers
 tf.enable_eager_execution()
 
@@ -92,6 +93,8 @@ def main(imgs_folder):
     folder=imgs_folder.replace("gs://","").split("/",1)[-1]
     #path to images to be classified
     images_path=list_blobs(bucket,folder)
+    if not images_path:
+        return images_path
     images_path=download_blob(bucket,images_path)
     #image_dictionary gives key as path to image and value as its array
     image_dictionary={}
