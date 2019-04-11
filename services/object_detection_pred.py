@@ -99,7 +99,7 @@ class predict():
         for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
                 image1 = Image.open(image_path)
                 im_width, im_height = image1.size
-                print image
+                #print image
                 vis_util.visualize_boxes_and_labels_on_image_array(
                 image,
                 np.squeeze(box),
@@ -178,7 +178,8 @@ class predict():
                 
             ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index,IMAGE_PATH)
             ocr.extend(ocr_list)
-            #print ocr_list
+            print "ocr_list"
+            print ocr_list
         return ocr    
 
 
@@ -189,6 +190,7 @@ def main(image_list,IMAGE_PATH):
     obj=predict(STAGING_AREA+"/"+FROZEN_GRAPH1,STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
     #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
     category_index=obj.category_index  
+    print category_index
     ocr=obj.read_from_list(image_list,category_index,IMAGE_PATH)
     #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
     print "completed"

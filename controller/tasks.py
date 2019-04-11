@@ -11,12 +11,21 @@ from services.db_connector import DataStore
 from vars_ import *
 from multiprocessing import Queue
 
+import time
+
 logger = get_task_logger(__name__)
 TASK_ID=[]
 # Init Database
 # Specify KIND = ocr
 db = DataStore(kind='ocr')
+
+# Specify KIND = img_name for pushing bounding box data in datastore
+db2 = DataStore(kind='img_name')
 IMAGE_PATH = Queue() 
+
+
+
+
 
 @shared_task
 def predictions(*args):
@@ -24,7 +33,7 @@ def predictions(*args):
     #time.sleep(10)
     img_path=args[0]
     IMAGE_PATH.put(img_path)
-    if img_path==None:
+    if img_path=='' or None:
         return "Invalid Path"
         
     #image_label=classification_pred.main(img_path)
@@ -36,6 +45,9 @@ def predictions(*args):
     #path to images to be classified
     images_path=classification_pred.list_blobs(bucket,folder)
     print images_path
+    
+    if images_path=="Invalid Bucket":
+        return "Invalid bucket"
     #check if path exists
     if not images_path:
         current_task.update_state(state='PROGRESS',
@@ -99,7 +111,9 @@ def object_detection(*args):
     print img_path
     current_task.update_state(state='PROGRESS',
             meta={'stage': 'Object detection prediction started'})
+    
     category_index,bb_info=object_detection_pred.main(args[0],img_path)
+    
     current_task.update_state(state='PROGRESS',
             meta={'stage': 'Object detection prediction completed'})
     print "object detection prediction completed"
@@ -124,10 +138,12 @@ def ocr(*args):
     
         
     print "ocr ended"
-     
-    res=move.delay(ocr_data)  
-    task_id = res.task_id
-    TASK_ID.append(task_id)
+    bb_info=args[0]
+    category_index=args[1]
+    #res=move.delay(ocr_data,category_index)  
+    #task_id = res.task_id
+    #TASK_ID.append(task_id)
+    move(ocr_data,bb_info,category_index)
     #res.update()
     #move()
     # Perform OCR
@@ -153,20 +169,39 @@ def move(*args):
     print "moving files to labelled"
     img_path=IMAGE_PATH.get()
     IMAGE_PATH.put(img_path)
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Moving predicted files to labelled folder'})
     move_files.main("move",img_path)
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Predicted files moved to labelled folder'})
+    
     print "files moved to labelled folder"
     ocr_data=args[0]
-    if not ocr_data:
+    bb_info=args[1]
+    category_index=args[2]
+    #Pushing ocr data in datastore
+    if ocr_data:
         for data in ocr_data:
-            """ current_task.update_state(state='PROGRESS',
-                meta={'stage': 'OCR data is being pushed to cloud'})"""
             db.post(data)
-        """current_task.update_state(state='PROGRESS',
-                meta={'stage': 'OCR data pushed to cloud'})  """ 
+            
+    #Converting bb_info in desired format and push it to datastore
+    bb_info_data=[]
+    for info in bb_info:
+        image_name=info['image_path'].replace(STAGING_AREA+"/","")
+        key=image_name.replace("unlabelled","labelled")
+        json={}
+        for boxes_info in info['bounding_box_info']:
+            if boxes_info or boxes_info!='' or boxes_info!=None:
+                class_id=boxes_info['class_']
+                class_name=category_index[class_id]['name']
+                ymin,xmin,ymax,xmax =boxes_info['box']
+                points={"xmin":xmin.item(),"xmax":xmax.item(),"ymin":ymin.item(),"ymax":ymax.item()}
+                json[class_name]=points
+        if bool(json):        
+            dict_={"key":key, "json":json, "timestamp":int(time.time()*1000),"automated":True}    
+            bb_info_data.append(dict_)   
+    #Pushing bb_info to datastore   
+    for data in bb_info_data:
+        print data
+        db2.push(data)
+        
+
     delete()
     
     
@@ -174,8 +209,10 @@ def delete(*args):
     img_path=IMAGE_PATH.get()
     IMAGE_PATH.put(img_path)
     print "deleting files from unlabelled folder"
+    print "image_path=",img_path
     move_files.main("delete",img_path)
     print "files deleted from unlabelled folder"
+    last=IMAGE_PATH.get()
 @task
 def get_task_status(task_id):
     print "task_id=",task_id

@@ -6,9 +6,10 @@ class DataStore:
     
     def __init__(self, kind):
         """
-        Initializing the namespace
+        Initializing the namespace 
         """
         self.client = datastore.Client(namespace='eob_predictions_data')
+        self.client2 = datastore.Client(namespace='eob_datastore_final')
         self.kind = kind
         
     def post(self, data):
@@ -23,4 +24,14 @@ class DataStore:
         task.update(data)
         
         self.client.put(task)
+        
+    def push(self,data):  
+        
+        assert data['key']
+        key =self.client2.key(self.kind,data.pop('key'))
+        task=datastore.Entity(key=key)
+        
+        task.update(data)
+        
+        self.client2.put(task)
     
