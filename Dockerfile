@@ -13,17 +13,21 @@ RUN mkdir /prediction_service
 WORKDIR /prediction_service
 
 # Copy the current directory contents into the container at /prediction_service
-ADD . /prediction_service/
+
+
+#RUN chmod 755 redis_installation_script.sh
 
 #Install redis
 #RUN ./redis_installation_script.sh
-
-# Install any needed packages specified in requirements.txt
-#RUN pip install -r requirements.txt
-
-#run celery
-#RUN celery -A eob_project worker -l info
-
+RUN apt-get update
+RUN apt-get install build-essential tcl -y
+RUN mkdir redis-stable 
+COPY redis-stable redis-stable
+WORKDIR redis-stable
+RUN make
+RUN make test
+RUN make install
+RUN systemctl start redis
 
 
 

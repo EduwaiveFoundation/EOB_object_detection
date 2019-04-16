@@ -1,2 +1,15 @@
-celery
-pascal_voc_writer
+djangorestframework==3.9.2
+django==1.11
+amqp==2.4.2
+redis==3.2.1
+celery==4.3.0
+pascal_voc_writer==0.1.4
+tensorflow==1.13.1
+google-cloud-storage==1.14.0
+opencv-python==4.1.0.25
+Pillow==2.2.1
+matplotlib==2.2.4
+numpy==1.16.2
+opencv-contrib-python-headless
+google-cloud-vision==0.36.0
+google-cloud-datastore==1.7.3

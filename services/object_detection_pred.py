@@ -120,7 +120,7 @@ class predict():
                     bounding_boxes_info.append(ocr_inputs)                    
                    
                     # ::addObject(name, xmin, ymin, xmax, ymax) to xml
-                    writer.addObject(category_index[class_]['name'], box[1],box[0],box[3],box[2])
+                    writer.addObject(category_index[class_]['name'], box[1]*im_width, box[0]*im_height, box[3]*im_width,                                                                            box[2]*im_height)
                                         
                 #print image_path
                 cv2.imwrite(image_path,image)
@@ -132,7 +132,7 @@ class predict():
                 destination_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
                 destination_path=destination_path+path.split("/")[-1]
                 upload_blob(bucket,path, destination_path)
-                ocr_list.append({'image_path': image_path, 'bounding_box_info':bounding_boxes_info})
+                ocr_list.append({'image_path': image_path,'image_width':im_width,'image_height': im_height, 'bounding_box_info':bounding_boxes_info})
                 self.i += 1
         return ocr_list     
 

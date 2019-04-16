@@ -120,6 +120,7 @@ def object_detection(*args):
     """res=ocr.delay(bb_info,category_index)  
     task_id = res.task_id
     res.update()"""
+    print bb_info
     ocr(bb_info,category_index)
    
     pass
@@ -133,7 +134,7 @@ def ocr(*args):
     print "ocr started"
     """current_task.update_state(state='PROGRESS',
             meta={'stage': 'OCR started'})"""
-    ocr_data=ocr_eob.main(args[0],args[1])
+    ocr_data,bb_info_data=ocr_eob.main(args[0],args[1])
     print ocr_data
     
         
@@ -143,7 +144,7 @@ def ocr(*args):
     #res=move.delay(ocr_data,category_index)  
     #task_id = res.task_id
     #TASK_ID.append(task_id)
-    move(ocr_data,bb_info,category_index)
+    move(ocr_data,bb_info_data)
     #res.update()
     #move()
     # Perform OCR
@@ -173,15 +174,15 @@ def move(*args):
     
     print "files moved to labelled folder"
     ocr_data=args[0]
-    bb_info=args[1]
-    category_index=args[2]
+    bb_info_data=args[1]
+   
     #Pushing ocr data in datastore
     if ocr_data:
         for data in ocr_data:
             db.post(data)
             
     #Converting bb_info in desired format and push it to datastore
-    bb_info_data=[]
+    """bb_info_data=[]
     for info in bb_info:
         image_name=info['image_path'].replace(STAGING_AREA+"/","")
         key=image_name.replace("unlabelled","labelled")
@@ -195,7 +196,7 @@ def move(*args):
                 json[class_name]=points
         if bool(json):        
             dict_={"key":key, "json":json, "timestamp":int(time.time()*1000),"automated":True}    
-            bb_info_data.append(dict_)   
+            bb_info_data.append(dict_)  """ 
     #Pushing bb_info to datastore   
     for data in bb_info_data:
         print data
