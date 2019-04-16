@@ -42,7 +42,6 @@ def main(bounding_box_info,category_index):
             class_=boxes_info['class_']
             score=boxes_info['score']
             category=CATEGORY[category_index[class_]['name']]
-            
             image1 = Image.open(file_name)
             #getting dimensions of bounding boxes
             im_width, im_height = image1.size
@@ -56,7 +55,7 @@ def main(bounding_box_info,category_index):
             
             if boxes_info or boxes_info!='' or boxes_info!=None:
                 class_id=boxes_info['class_']
-                class_name=category_index[class_id]['name']
+                class_name=CATEGORY[category_index[class_id]['name']]
 
                 points={"xmin":xminn,"xmax":xmaxx,"ymin":yminn,"ymax":ymaxx}
                 json[class_name]=points

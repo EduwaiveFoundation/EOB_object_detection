@@ -48,11 +48,13 @@ def _path_to_img(path,image_size=(224, 224)):
 def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
     storage_client = storage.Client()
-    try:
+    print bucket_name
+    bucket = storage_client.get_bucket(bucket_name)
+    """try:
         bucket = storage_client.get_bucket(bucket_name)
     except:
         error="Invalid Bucket"
-        return error
+        return error"""
 
     blobs = bucket.list_blobs(prefix=prefix)
     labels=[]
