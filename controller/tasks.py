@@ -181,22 +181,6 @@ def move(*args):
         for data in ocr_data:
             db.post(data)
             
-    #Converting bb_info in desired format and push it to datastore
-    """bb_info_data=[]
-    for info in bb_info:
-        image_name=info['image_path'].replace(STAGING_AREA+"/","")
-        key=image_name.replace("unlabelled","labelled")
-        json={}
-        for boxes_info in info['bounding_box_info']:
-            if boxes_info or boxes_info!='' or boxes_info!=None:
-                class_id=boxes_info['class_']
-                class_name=category_index[class_id]['name']
-                ymin,xmin,ymax,xmax =boxes_info['box']
-                points={"xmin":xmin.item(),"xmax":xmax.item(),"ymin":ymin.item(),"ymax":ymax.item()}
-                json[class_name]=points
-        if bool(json):        
-            dict_={"key":key, "json":json, "timestamp":int(time.time()*1000),"automated":True}    
-            bb_info_data.append(dict_)  """ 
     #Pushing bb_info to datastore   
     for data in bb_info_data:
         print data
@@ -210,7 +194,6 @@ def delete(*args):
     img_path=IMAGE_PATH.get()
     IMAGE_PATH.put(img_path)
     print "deleting files from unlabelled folder"
-    print "image_path=",img_path
     move_files.main("delete",img_path)
     print "files deleted from unlabelled folder"
     last=IMAGE_PATH.get()

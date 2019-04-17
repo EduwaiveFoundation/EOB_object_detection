@@ -96,9 +96,13 @@ class predict():
         (boxes, scores, classes, num) = self.sess.run(
             [detection_boxes, detection_scores, detection_classes, num_detections],
             feed_dict={image_tensor: image_expanded})
+      
+        
         for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
                 image1 = Image.open(image_path)
                 im_width, im_height = image1.size
+                
+                confidence_score=[]
                 #print image
                 vis_util.visualize_boxes_and_labels_on_image_array(
                 image,
@@ -115,10 +119,13 @@ class predict():
                 # Writer(path, width, height)
                 writer = Writer(image_path, im_width,im_height)
                 
+                
+                
                 for box,class_,score in zip(box[score>=0.2],class_[score>=0.2],score):
                     ocr_inputs={'box':box,'class_':class_,'score':score}
-                    bounding_boxes_info.append(ocr_inputs)                    
-                   
+                    bounding_boxes_info.append(ocr_inputs) 
+                    
+                    confidence_score.append(int(score*10))
                     # ::addObject(name, xmin, ymin, xmax, ymax) to xml
                     writer.addObject(category_index[class_]['name'], box[1]*im_width, box[0]*im_height, box[3]*im_width,                                                                            box[2]*im_height)
                                         
@@ -132,8 +139,18 @@ class predict():
                 destination_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
                 destination_path=destination_path+path.split("/")[-1]
                 upload_blob(bucket,path, destination_path)
-                ocr_list.append({'image_path': image_path,'image_width':im_width,'image_height': im_height, 'bounding_box_info':bounding_boxes_info})
+                
+                 #calculate confidence score
+                confidence_score=set(confidence_score)
+                count=len(confidence_score)
+                average_confidence_score=((sum(confidence_score))/count)*10
+                print average_confidence_score
+                
+                ocr_list.append({'image_path': image_path,'image_width':im_width,'image_height': im_height, 'confidence_score':average_confidence_score, 'bounding_box_info':bounding_boxes_info})
                 self.i += 1
+                
+               
+        
         return ocr_list     
 
     

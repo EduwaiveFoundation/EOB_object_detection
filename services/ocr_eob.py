@@ -25,6 +25,7 @@ def main(bounding_box_info,category_index):
     
     for image_info in bounding_box_info:
         file_name=image_info['image_path']
+        confidence_score=image_info['confidence_score']
         #original width and height of image divided by resized height and width(1000,1000) of image
         width=image_info['image_width']
         height=image_info['image_height']
@@ -79,7 +80,8 @@ def main(bounding_box_info,category_index):
                 data[category]=value
                 
         if bool(json):        
-            dict_={"key":key, "json":json, "timestamp":int(time.time()*1000),"automated":True}    
+            dict_={"key":key, "json":json,"confidence_score":confidence_score,
+                   "timestamp":int(time.time()*1000),"automated":True}    
             bb_info_data.append(dict_)      
         ocr_output.append(data)    
     return ocr_output , bb_info_data     
