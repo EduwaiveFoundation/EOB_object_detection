@@ -3,11 +3,11 @@ from celery.utils.log import get_task_logger
 from celery.result import AsyncResult
 from celery import current_task
 from celery import subtask
-import time
+import time, os
 import codecs, json 
-from services import classification_pred,object_detection_pred,ocr_eob,move_files
+from services import classification_pred,object_detection_pred,ocr_eob,move_files, eob_type
 from services.db_connector import DataStore
-
+import shutil
 from vars_ import *
 from multiprocessing import Queue
 
@@ -23,11 +23,7 @@ db = DataStore(kind='ocr')
 db2 = DataStore(kind='img_name')
 IMAGE_PATH = Queue() 
 
-
-
-
-
-@shared_task
+#@shared_task
 def predictions(*args):
     print ("Job started")
     #time.sleep(10)
@@ -44,26 +40,26 @@ def predictions(*args):
   
     #path to images to be classified
     images_path=classification_pred.list_blobs(bucket,folder)
-    print images_path
+    print len(images_path)
     
     if images_path=="Invalid Bucket":
         return "Invalid bucket"
     #check if path exists
     if not images_path:
-        current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Path doesnot exist'})
+        #current_task.update_state(state='PROGRESS',
+        #    meta={'stage': 'Path doesnot exist'})
         return "Invalid path"
     
     #Downloading fles to local
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Downloading files from gcs'})
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage': 'Downloading files from gcs'})
     images_path=classification_pred.download_blob(bucket,images_path)
     #print images_path
     logger.info("\nFiles Downloaded")
     #image_dictionary gives key as path to image and value as its array
     image_dictionary={}
-    current_task.update_state(state='PROGRESS',
-            meta={'stage':'converting images into desired format'})
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage':'converting images into desired format'})
     for image in images_path:
         image_dictionary[image] = classification_pred._path_to_img(image)
     logger.info("\nImages converted into desired format")    
@@ -72,16 +68,16 @@ def predictions(*args):
     #need to write a function which automatically used latest model from the model_directory
     #path to saved model
     export_dir = STAGING_AREA+"/"+CLASSIFICATION_MODEL_DIR 
-    current_task.update_state(state='PROGRESS',
-            meta={'stage':'predicting classes'})
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage':'predicting classes'})
     #make_predictions
     output=classification_pred.prediction(export_dir,image_dictionary) 
     #print (output)
     #image_label gives path to image with its label
     #print output
     image_label={key:(CLASSIFICATION_LABEL_NOT_USEFUL if value < 0 else CLASSIFICATION_LABEL_USEFUL) for key,value in                  zip(image_dictionary.keys(), output) } 
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Classification prediction completed'})
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage': 'Classification prediction completed'})
 
     logger.info("\nClassification prediction pipeline completed")
     #print (image_label)
@@ -92,36 +88,43 @@ def predictions(*args):
             
     #subtask('object_detection', args=(image_path) )   
     if not image_path:
-        res=move.delay(image_path)
+        #res=move.delay(image_path)
+	res = move(image_path)
     else:    
-        res=object_detection.delay(image_path)  
-    task_id = res.task_id
-    TASK_ID.append(task_id)
+        #res=object_detection.delay(image_path)  
+	res=object_detection(image_path) 
+    #task_id = res.task_id
+    #TASK_ID.append(task_id)
     #res.update()
     
     #print ("job done")
     #image_label=classification_pred.main(img_path) 
     return "Job done..."
 
-@task
+#@task
 def object_detection(*args):
     print "object detection prediction started"
     img_path=IMAGE_PATH.get()
     IMAGE_PATH.put(img_path)
-    print img_path
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Object detection prediction started'})
+    print ("images_dir", img_path)
+    print args[0]
+    
+    #Finding EOB Type
+    EOBType = eob_type.get_eob_type('data/'+img_path.split('/', 3)[-1])
+    
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage': 'Object detection prediction started'})
     
     category_index,bb_info=object_detection_pred.main(args[0],img_path)
     
-    current_task.update_state(state='PROGRESS',
-            meta={'stage': 'Object detection prediction completed'})
+    #current_task.update_state(state='PROGRESS',
+    #        meta={'stage': 'Object detection prediction completed'})
     print "object detection prediction completed"
     """res=ocr.delay(bb_info,category_index)  
     task_id = res.task_id
     res.update()"""
     print bb_info
-    ocr(bb_info,category_index)
+    ocr(bb_info,category_index, EOBType)
    
     pass
 
@@ -135,9 +138,10 @@ def ocr(*args):
     """current_task.update_state(state='PROGRESS',
             meta={'stage': 'OCR started'})"""
     ocr_data,bb_info_data=ocr_eob.main(args[0],args[1])
-    print ocr_data
     
-        
+    for data_ in ocr_data:
+        data_['EOBType'] = args[2]
+    print ("ocr data", ocr_data)    
     print "ocr ended"
     bb_info=args[0]
     category_index=args[1]
@@ -170,6 +174,7 @@ def move(*args):
     print "moving files to labelled"
     img_path=IMAGE_PATH.get()
     IMAGE_PATH.put(img_path)
+    print img_path
     move_files.main("move",img_path)
     
     print "files moved to labelled folder"
@@ -197,6 +202,14 @@ def delete(*args):
     move_files.main("delete",img_path)
     print "files deleted from unlabelled folder"
     last=IMAGE_PATH.get()
+    #files_to_del = os.listdir('data/unlabelled')
+    #for file_ in files_to_del:
+     #   os.remove('data/unlabelled/'+file_)
+    #subprocess.call('rm -r data/unlabelled/*', shell=True)
+    print ('last', last)
+    shutil.rmtree('data/'+img_path.split('/', 3)[-1])
+    #os.mkdir('data/unlabelled')
+    
 @task
 def get_task_status(task_id):
     print "task_id=",task_id

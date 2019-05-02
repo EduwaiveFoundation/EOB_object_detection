@@ -38,6 +38,8 @@ def main(func,IMAGE_PATH):
     for image in image_list:
         destination_path=image.replace("unlabelled","labelled")
         if(func=="move"):
+            print image
+            print destination_path
             copy_blob(bucket, image , destination_path)
         if(func=="delete"):
             delete_blob(bucket,image)

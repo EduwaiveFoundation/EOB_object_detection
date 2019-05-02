@@ -1,7 +1,5 @@
-*.pyc
-*.vscode
+*pyc
 data/*
-services/utils/*
-services/core/*
-services/protos/*
+redis-stable/*
 eduwaivecommon-b77dc95e0151.json
+

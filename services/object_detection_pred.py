@@ -93,10 +93,26 @@ class predict():
         # Number of objects detected
         num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
         # Perform the actual detection by running the model with the image as input
-        (boxes, scores, classes, num) = self.sess.run(
-            [detection_boxes, detection_scores, detection_classes, num_detections],
-            feed_dict={image_tensor: image_expanded})
+        
+        boxes_ = []
+        scores_ = []
+        classes_ = []
+        
+        for image in image_expanded:
+            
+            (boxes, scores, classes, num) = self.sess.run(
+                    [detection_boxes, detection_scores, detection_classes, num_detections],
+                    feed_dict={image_tensor: [image]})
+            boxes_.append(boxes[0])
+            scores_.append(scores[0])
+            classes_.append(classes[0])
       
+        boxes = boxes_
+        scores = scores_
+        classes = classes_
+        #print (boxes[0].shape)#.shape
+        #print len(scores[0])#.shape
+        #print len(classes[0])#.shape
         
         for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
                 image1 = Image.open(image_path)
@@ -124,7 +140,7 @@ class predict():
                 for box,class_,score in zip(box[score>=0.2],class_[score>=0.2],score):
                     ocr_inputs={'box':box,'class_':class_,'score':score}
                     bounding_boxes_info.append(ocr_inputs) 
-                    
+                    #print score
                     confidence_score.append(int(score*10))
                     # ::addObject(name, xmin, ymin, xmax, ymax) to xml
                     writer.addObject(category_index[class_]['name'], box[1]*im_width, box[0]*im_height, box[3]*im_width,                                                                            box[2]*im_height)
@@ -143,10 +159,13 @@ class predict():
                  #calculate confidence score
                 confidence_score=set(confidence_score)
                 count=len(confidence_score)
-                average_confidence_score=((sum(confidence_score))/count)*10
-                print average_confidence_score
-                
-                ocr_list.append({'image_path': image_path,'image_width':im_width,'image_height': im_height, 'confidence_score':average_confidence_score, 'bounding_box_info':bounding_boxes_info})
+                if count!=0:
+                    average_confidence_score=((sum(confidence_score))/count)*10 
+                else:
+                    average_confidence_score=0
+                #print average_confidence_score
+                if average_confidence_score:
+                    ocr_list.append({'image_path': image_path, 'confidence_score':average_confidence_score, 'bounding_box_info':bounding_boxes_info})
                 self.i += 1
                 
                
@@ -190,13 +209,14 @@ class predict():
             image_list=[]
             for i in batch:
                 image=cv2.imread(i)
-                image=cv2.resize(image,(1000,1000))
+                #print ("image shape", image.shape)
+                #image=cv2.resize(image,(image.shape[0], image.shape[1]))
                 image_expanded.append(image)
                 
             ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index,IMAGE_PATH)
             ocr.extend(ocr_list)
             print "ocr_list"
-            print ocr_list
+            #print ocr_list
         return ocr    
 
 

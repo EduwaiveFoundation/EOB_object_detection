@@ -27,8 +27,8 @@ def main(bounding_box_info,category_index):
         file_name=image_info['image_path']
         confidence_score=image_info['confidence_score']
         #original width and height of image divided by resized height and width(1000,1000) of image
-        width=image_info['image_width']
-        height=image_info['image_height']
+        #width=image_info['image_width']
+        #height=image_info['image_height']
         #data dictionary is used for storing the extracted information for each field
         data=dict()
         json={}
@@ -48,7 +48,9 @@ def main(bounding_box_info,category_index):
             im_width, im_height = image1.size
             ymin,xmin,ymax,xmax =boxes_info['box']
             bb = (xmin * im_width, ymin * im_height, xmax * im_width, ymax * im_height)
-            xminn,yminn,xmaxx,ymaxx = xmin *width, ymin *height, xmax * width, ymax *height
+            xminn,yminn,xmaxx,ymaxx = xmin *im_width, ymin *im_height, xmax *im_width, ymax *im_height
+            bb = map(lambda x: int(round(x)), bb)
+            print bb
             #cropping the image to size of bounding box
             crop_img = image1.crop(bb)
             #saving cropped image to temporary location

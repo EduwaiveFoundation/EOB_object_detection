@@ -32,8 +32,9 @@ class List(APIView):
         """
         global TASK_ID
         img_path=request.data['input_path']
-        task=predictions.delay(img_path)
-        TASK_ID.insert(0,task.id)    
+        #task=predictions.delay(img_path)
+        task=predictions(img_path)
+        #TASK_ID.insert(0,task.id)    
 
         response = {
             "status": "OK",

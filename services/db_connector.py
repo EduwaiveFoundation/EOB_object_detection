@@ -20,7 +20,7 @@ class DataStore:
         assert data['Filename']
         key = self.client.key(self.kind, data.pop('Filename'))
         task = datastore.Entity(key=key)
-        
+        #update data stored in datastore
         task.update(data)
         
         self.client.put(task)
