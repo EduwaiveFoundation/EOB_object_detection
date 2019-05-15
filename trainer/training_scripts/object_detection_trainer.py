@@ -1,5 +1,6 @@
 import subprocess
 import os
+import shutil
 from google.cloud import storage
 from trainer.training_scripts import xml_to_csv
 from trainer.training_scripts import generate_tfrecord
@@ -8,7 +9,10 @@ from trainer.training_scripts import generate_tfrecord
 def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
     storage_client = storage.Client()
-    bucket = storage_client.get_bucket(bucket_name)
+    try:
+        bucket = storage_client.get_bucket(bucket_name)
+    except:
+        return "bucket does not exists"
 
     blobs = bucket.list_blobs(prefix=prefix)
     list_blobs=[]
@@ -30,6 +34,8 @@ def download_blob(bucket_name, list_files):
     """Downloads a blob from the bucket."""
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(bucket_name)
+    if not os.path.exists('data'):
+        os.mkdir("data")
     for file in list_files:
         blob = bucket.blob(file)
         destination_file="data/"+file.split("/")[-1]
@@ -51,6 +57,8 @@ def main(project,data_dir):
    
     else:
         list_files=list_blobs(GCS_BUCKET,TRAIN_DATA)
+        if list_files == "bucket does not exists" or len(list_files) == 0:
+            return "Invalid input path"
         download_blob(GCS_BUCKET,list_files)
         xml_to_csv.main()
         output_path="data/train.record"
@@ -74,6 +82,8 @@ def main(project,data_dir):
         --train_dir=gs://sampleeob/data/ \
         --pipeline_config_path=gs://sampleeob/data/faster_rcnn_inception_v2_pets.config".format(GCS_BUCKET),shell=True)
         
+        os.chdir("/home/navneet/Training API")
+        shutil.rmtree('data')
         job_list=subprocess.check_output("gcloud ml-engine jobs list",shell=True)
         print job_list
         job=job_list.split("\n")

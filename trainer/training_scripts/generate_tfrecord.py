@@ -40,7 +40,9 @@ def class_text_to_int(row_label):
     elif row_label=='deductible':
         return 5   
     elif row_label=='benefit':
-        return 6                      
+        return 6   
+    elif row_label=='copay':
+        return 7
     else:
         None
 

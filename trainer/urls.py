@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jobs/training/', views.Train.as_view()),
     url(r'^jobs/status/',views.Status.as_view()),
+    url(r'^jobs/cancel/',views.Cancel.as_view()),
 ]
 
 
