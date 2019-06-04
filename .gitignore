@@ -8,6 +8,6 @@ services/protos/*
 services/image_classifier_eob/data/*
 services/image_classifier_eob/model_dir/*
 services/image_classifier_eob/output/*
-
+ace-automated-clean-eobs-4a38f27dff8c.json
 
 
