@@ -42,6 +42,7 @@ def main(bounding_box_info,category_index):
                 
             class_=boxes_info['class_']
             score=boxes_info['score']
+            #category name
             category=CATEGORY[category_index[class_]['name']]
             image1 = Image.open(file_name)
             #getting dimensions of bounding boxes
@@ -50,7 +51,7 @@ def main(bounding_box_info,category_index):
             bb = (xmin * im_width, ymin * im_height, xmax * im_width, ymax * im_height)
             xminn,yminn,xmaxx,ymaxx = xmin *im_width, ymin *im_height, xmax *im_width, ymax *im_height
             bb = map(lambda x: int(round(x)), bb)
-            print bb
+            #print bb
             #cropping the image to size of bounding box
             crop_img = image1.crop(bb)
             #saving cropped image to temporary location

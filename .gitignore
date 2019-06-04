@@ -2,4 +2,12 @@
 data/*
 redis-stable/*
 eduwaivecommon-b77dc95e0151.json
+services/core/*
+services/utils/*
+services/protos/*
+services/image_classifier_eob/data/*
+services/image_classifier_eob/model_dir/*
+services/image_classifier_eob/output/*
+
+
 

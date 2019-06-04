@@ -2,7 +2,7 @@ import argparse
 import os
 import tensorflow as tf
 from google.cloud import storage
-from env_var import *
+from vars_ import *
 #from controller.tasks import IMAGE_PATH
 #l = tf.keras.layers
 tf.enable_eager_execution()
@@ -31,16 +31,15 @@ def _path_to_img(path,image_size=(224, 224)):
           path: A Tensor of type string of the file path to read from
           
         Returns:
-          Tuple of dict and tensor. 
-          Dictionary is key to tensor mapping of features
+         
           Label is a Tensor of type string that is the label for these features
         """
-        label = tf.string_split([path], delimiter='/').values[-2]
+        #label = tf.string_split([path], delimiter='/').values[-2]
 
         # Read in the image from disk
         image_string = tf.io.read_file(path)
         image_resized = _img_string_to_tensor(image_string, image_size)
-        image=image_resized.numpy()
+        image = image_resized.numpy()
         #dict_images={path:image.tolist()}
         return image.tolist()
 
@@ -49,6 +48,7 @@ def list_blobs(bucket_name,prefix):
     """Lists all the blobs in the bucket."""
     storage_client = storage.Client()
     print bucket_name
+    print prefix
     bucket = storage_client.get_bucket(bucket_name)
     """try:
         bucket = storage_client.get_bucket(bucket_name)
@@ -59,29 +59,39 @@ def list_blobs(bucket_name,prefix):
     blobs = bucket.list_blobs(prefix=prefix)
     labels=[]
     for blob in blobs:
+        #checking if given blob is image
         if blob.name.endswith(".jpg"):
             labels.append(blob.name)
+    #returns list of images present in given path in gcs        
     return labels
 
 def download_blob(bucket_name, source_blob_name):
     """Downloads a list of blob from the bucket."""
     storage_client = storage.Client()
     bucket = storage_client.get_bucket(bucket_name)
+    #list to store paths where images are copied in local machine
     local_img_path=[]
     for f in source_blob_name:
         blob = bucket.blob(f)
-        directories=f.split("/")
-        no_dir=len(directories)
-        parent_dir=STAGING_AREA
-        for i in range(no_dir-1):
-            if not parent_dir:
-                parent_dir=parent_dir+directories[i] 
-            else:
-                parent_dir=parent_dir+"/"+directories[i]
-            if(not os.path.exists(parent_dir)):
-                os.mkdir(parent_dir)
-        blob.download_to_filename(STAGING_AREA+"/"+f)
-        local_img_path.append(STAGING_AREA+"/"+f)
+        #check if given blob name exists in gcs bucket
+        if blob.exists():
+            #list number of directories to be made to replicate the same structure in local machine as that in gcs
+            directories=f.split("/")
+            no_dir=len(directories)
+            #all the data will be saved in STAGING AREA
+            parent_dir=STAGING_AREA
+            for i in range(no_dir-1):
+                #parent directory is predecessor directory of i
+                if not parent_dir:
+                    parent_dir=parent_dir+directories[i] 
+                else:
+                    parent_dir=parent_dir+"/"+directories[i]
+                if(not os.path.exists(parent_dir)):
+                    print parent_dir
+                    os.mkdir(parent_dir)
+            blob.download_to_filename(STAGING_AREA+"/"+f)
+            local_img_path.append(STAGING_AREA+"/"+f)
+    #list of paths where images are downloaded      
     return local_img_path
         
 def prediction(export_dir,image_dictionary):
@@ -94,15 +104,16 @@ def prediction(export_dir,image_dictionary):
                 )
         return output
     
-def main(imgs_folder):
-    bucket=imgs_folder.replace("gs://","").split("/")[0]
+def main(images_path):
+    """bucket=imgs_folder.replace("gs://","").split("/")[0]
     folder=imgs_folder.replace("gs://","").split("/",1)[-1]
     #path to images to be classified
     images_path=list_blobs(bucket,folder)
     if not images_path:
         return images_path
-    images_path=download_blob(bucket,images_path)
+    images_path=download_blob(bucket,images_path)"""
     #image_dictionary gives key as path to image and value as its array
+    print "images_path",images_path
     image_dictionary={}
     for image in images_path:
         image_dictionary[image] = _path_to_img(image)
@@ -112,11 +123,17 @@ def main(imgs_folder):
     #path to saved model
     export_dir = STAGING_AREA+"/"+CLASSIFICATION_MODEL_DIR 
     #make_predictions
+    #print image_dictionary
     output=prediction(export_dir,image_dictionary) 
     #image_label gives path to image with its label
-    #print output
-    image_label={key:(CLASSIFICATION_LABEL_USEFUL if value < 0 else CLASSIFICATION_LABEL_NOT_USEFUL) for key,value in                  zip(image_dictionary.keys(), output) }     
-    return image_label
+    image_label={key:(CLASSIFICATION_LABEL_USEFUL if value > 0 else CLASSIFICATION_LABEL_NOT_USEFUL) for key,value in                  zip(image_dictionary.keys(), output) }  
+    print image_label
+    image_path=[]
+    for key,value in image_label.items():   
+        if value == CLASSIFICATION_LABEL_USEFUL:
+            image_path.append(key)
+    #list of path of Useful images       
+    return image_path
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

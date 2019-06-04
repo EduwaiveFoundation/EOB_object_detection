@@ -15,7 +15,7 @@ import os
 import cv2
 import numpy as np
 import tensorflow as tf
-import sys
+import sys ,json
 from PIL import Image
 from matplotlib import pyplot as plt
 from vars_ import *
@@ -75,49 +75,65 @@ class predict():
             sess = tf.Session(graph=self.detection_graph)
             return sess    
     
-    def run_for_single_image(self,image_expanded,batch,category_index,IMAGE_PATH):
+    def run_for_single_image(self,image_expanded,image_prediction_data,image_name,category_index,IMAGE_PATH,
+                             encoded_image_string_tensor):
         # Define input and output tensors (i.e. data) for the object detection classifier
         print "inside run_from_single_image"
-        # Input tensor is the image
-        image_tensor = self.detection_graph.get_tensor_by_name('image_tensor:0')
+        
+        detection_classes=[]
+        detection_boxes=[]
+        detection_scores=[]
+        num_detections=[]
         ocr_list=[]
-        # Output tensors are the detection boxes, scores, and classes
-        # Each box represents a part of the image where a particular object was detected
-        detection_boxes = self.detection_graph.get_tensor_by_name('detection_boxes:0')
+        #saving outputs of online predictions in list
+        for predicted_data in image_prediction_data:
+            if predicted_data != "size exceeds":
+                print "online prediction"
+                with open (predicted_data) as json_file:
+                    data=json.load(json_file)
+                classes=np.expand_dims(np.array(data["detection_classes"]),axis=0)
+                boxes=np.expand_dims(np.array(data["detection_boxes"]),axis=0)
+                scores=np.expand_dims(np.array(data["detection_scores"]),axis=0)
+                num=np.expand_dims(np.array(data["num_detections"]),axis=0)
 
-        # Each score represents level of confidence for each of the objects.
-        # The score is shown on the result image, together with the class label.
-        detection_scores = self.detection_graph.get_tensor_by_name('detection_scores:0')
-        detection_classes = self.detection_graph.get_tensor_by_name('detection_classes:0')
+                detection_classes.append(classes)
+                detection_boxes.append(boxes)
+                detection_scores.append(scores)
+                num_detections.append(num)
+        
+        
+            else:
+                print "local prediction"
+                # Input tensor is the image
+                image_tensor = self.detection_graph.get_tensor_by_name('image_tensor:0')
+                # Output tensors are the detection boxes, scores, and classes
+                # Each box represents a part of the image where a particular object was detected
+                boxes_ = self.detection_graph.get_tensor_by_name('detection_boxes:0')
 
-        # Number of objects detected
-        num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
-        # Perform the actual detection by running the model with the image as input
-        
-        boxes_ = []
-        scores_ = []
-        classes_ = []
-        
-        for image in image_expanded:
-            
-            (boxes, scores, classes, num) = self.sess.run(
-                    [detection_boxes, detection_scores, detection_classes, num_detections],
-                    feed_dict={image_tensor: [image]})
-            boxes_.append(boxes[0])
-            scores_.append(scores[0])
-            classes_.append(classes[0])
-      
-        boxes = boxes_
-        scores = scores_
-        classes = classes_
-        #print (boxes[0].shape)#.shape
-        #print len(scores[0])#.shape
-        #print len(classes[0])#.shape
-        
-        for image, box, score, class_,image_path in zip(image_expanded, boxes, scores, classes,batch):
+                # Each score represents level of confidence for each of the objects.
+                # The score is shown on the result image, together with the class label.
+                scores_ = self.detection_graph.get_tensor_by_name('detection_scores:0')
+                classes_ = self.detection_graph.get_tensor_by_name('detection_classes:0')
+
+                # Number of objects detected
+                num_detections = self.detection_graph.get_tensor_by_name('num_detections:0')
+                # Perform the actual detection by running the model with the image as input
+
+                for image in image_expanded:
+                    #image=cv2.imread(image)
+                    #np.expand_dims(image, axis=0)
+                    (boxes, scores, classes, num) = self.sess.run(
+                            [boxes_, scores_, classes_, num_detections],
+                            feed_dict={image_tensor:[image] })
+                    detection_boxes.append(boxes[0])
+                    detection_scores.append(scores[0])
+                    detection_classes.append(classes[0])
+
+                #drawing and saving the bounding boxes information using the above lists
+        for image, box, score, class_,image_path,predicted_data in zip(image_expanded, detection_boxes, detection_scores, detection_classes,image_name,image_prediction_data):
                 image1 = Image.open(image_path)
                 im_width, im_height = image1.size
-                
+                #saves confidence scores of all bounding boxes of single image
                 confidence_score=[]
                 #print image
                 vis_util.visualize_boxes_and_labels_on_image_array(
@@ -129,31 +145,55 @@ class predict():
                 use_normalized_coordinates=True,
                 line_thickness=8,
                 min_score_thresh=0.80)
+                #for saving information of each bounding for a particular image
                 bounding_boxes_info = []
                 
                 #saving bb info in xmls
                 # Writer(path, width, height)
                 writer = Writer(image_path, im_width,im_height)
-                
-                
-                
-                for box,class_,score in zip(box[score>=0.2],class_[score>=0.2],score):
-                    ocr_inputs={'box':box,'class_':class_,'score':score}
+                print "score",np.array(score).shape
+                if predicted_data=='size exceeds':#because shape of online and local predicted results is slightly changed
+                    print "local size"
+                    #score=score[0]
+                else:
+                    print "online size"
+           
+                #saving information about each box for a particular image
+                print "score",np.array(score).shape
+                print "box",np.array(box).shape
+                print "class_",np.array(class_).shape
+                i=0
+                new_score=score[score>=0.2]
+                new_box=box[score>=0.2]
+                new_class=class_[score>=0.2]
+                    
+                print "new_box",new_box   
+                #for box,class_,score_ in zip(box[score>=0.2],class_[score>=0.2],score[score>=0.2]):
+                for box,class_,score_ in zip(new_box,new_class,new_score):
+                    ocr_inputs={'box':box,'class_':class_,'score':score_}
+                    print "ocr_inputs",ocr_inputs
+                    #saving information 
+                    #print "score_",score_
                     bounding_boxes_info.append(ocr_inputs) 
-                    #print score
-                    confidence_score.append(int(score*10))
+                    confidence_score.append(int(score_*10))
                     # ::addObject(name, xmin, ymin, xmax, ymax) to xml
                     writer.addObject(category_index[class_]['name'], box[1]*im_width, box[0]*im_height, box[3]*im_width,                                                                            box[2]*im_height)
                                         
-                #print image_path
+                #drawing bounding boxes
                 cv2.imwrite(image_path,image)
                 # ::save(path)
-                path=image_path.replace(".jpg",".xml")                      
+                path=image_path.replace(".jpg",".xml") 
+                #save xmls
                 writer.save(path)
-                
-                bucket=IMAGE_PATH.replace("gs://","").split("/")[0]
-                destination_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
-                destination_path=destination_path+path.split("/")[-1]
+                #if IMAGE_PATH = "automatic" default bucket is "testeob"
+                if IMAGE_PATH=="automatic":
+                    bucket="testeob"
+                    #destination_path=path.split("/")[-1] #name of image
+                    destination_path=path.replace("data/","")
+                else:    
+                    bucket=IMAGE_PATH.replace("gs://","").split("/")[0]
+                    destination_path=IMAGE_PATH.replace("gs://","").split("/",1)[-1]
+                    destination_path=destination_path+path.split("/")[-1]
                 upload_blob(bucket,path, destination_path)
                 
                  #calculate confidence score
@@ -172,7 +212,7 @@ class predict():
         
         return ocr_list     
 
-    
+    #not used
     def draw_vis(self,image,boxes,classes,scores):
         # Draw the results of the detection (aka 'visulaize the results')
         vis_util.visualize_boxes_and_labels_on_image_array(
@@ -186,7 +226,7 @@ class predict():
             min_score_thresh=0.80)
         
         cv2.imwrite(STAGING_AREA+"/"+'prediction1.jpg',image_expanded)
-    
+    #not used
     def start(self,path_to_image):
         image = cv2.imread(path_to_image)
         image_expanded = np.expand_dims(image, axis=0)
@@ -206,16 +246,24 @@ class predict():
             batchsize=min(batchsize,len(path_list)-i+1)
             batch = path_list[i:i+batchsize]
             image_expanded=[]
+            image_prediction_data=[]
             image_list=[]
+            encoded_image_string_tensor=[]
             for i in batch:
-                image=cv2.imread(i)
-                #print ("image shape", image.shape)
+                #check if online predictions have occured 
+                image=cv2.imread(i['image_path'])
+                print ("image shape", image.shape)
                 #image=cv2.resize(image,(image.shape[0], image.shape[1]))
+                image_list.append(i['image_path'])
                 image_expanded.append(image)
-                
-            ocr_list= self.run_for_single_image(np.array(image_expanded),batch,category_index,IMAGE_PATH)
+                image_prediction_data.append(i['predictions_path'])
+                encoded_image_string_tensor.append(i['image_string_tensor'])
+                print len(image_expanded)
+            #print np.array(image_expanded).shape
+            ocr_list= self.run_for_single_image(image_expanded,image_prediction_data,image_list,category_index,IMAGE_PATH,
+                                                encoded_image_string_tensor)
             ocr.extend(ocr_list)
-            print "ocr_list"
+            print "ocr_list",ocr
             #print ocr_list
         return ocr    
 
@@ -225,10 +273,8 @@ class predict():
 def main(image_list,IMAGE_PATH): 
     print "Inside main"
     obj=predict(STAGING_AREA+"/"+FROZEN_GRAPH1,STAGING_AREA+"/"+LABEL_MAP,NUM_CLASSES)
-    #path_list=['/home/sgrover/models/research/object_detection/images/test/267139_2017-0.jpg']
     category_index=obj.category_index  
     print category_index
     ocr=obj.read_from_list(image_list,category_index,IMAGE_PATH)
-    #pred=obj.start('data/unlabelled/Anthem.1/Anthem.1-page1.jpg')
     print "completed"
     return category_index,ocr

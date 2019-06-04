@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ace-automated-clean-eobs",
+  "private_key_id": "4a38f27dff8c63bfa5d92bd1593d4c0f8348c82d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkPbESKqd+arjC\nk/xmWKI0L9oFlVDYskXa5LEvsNoUe0+4xjDZgqQE/tZbbiIvYw6C+wx8KE51Bs1d\n+eU8b7QFPRA/8S96YC5ZDXDs11EuzRh0V0Sa4Nqu59tAEt1G5pZKVw45dpPs/iT+\nRPtHKPKSyGOs0ZdZaJT+VFTCmGlx0FGPHwy6Kl7nJFUjcv7+eh7ftYL+smbsRe85\nIybPgWWhZhhLWUEMkL8YXh31S1bLf+3axPxD8O6n4D3+X6QbxrWDFjobCH+oIdYY\n9aV4UszTbanVJ0x34m2IRobuL51fIM1S5QRBF6u7PHKjho7dj5agnPsR6cwfjRZi\nNTMidwqhAgMBAAECggEAKlvo28UZfr66mSB+s8y/RNNkmRUKDWFpJ8vcsO6dSDQH\neyHOfoK1l747/ce5VFxpZTmnXiwtE/ylocuuJjivBrzZgIxNUPQWcAxJ6COeQgJO\ngM7zGDjO3dZZkzxqSnt1HoY2WnatLy3az6Nt5Uv3yAibwHor3TjeWHvagne5lksY\nuUjiz6nAP4a6OJtMyIhII2WP7JNNeSf1UcnjCcTOH2dRgXvUTAJrllH0o/OCrB7y\nx/jUSRnhC3r70BDbBzI/Fgtdr4maLSJ2RhkQMgvAFeHL5IlXfXWVvx1E28aUJEYx\nhYb978CxbP5k4X5yJQR88x3AjmojZebBZX+QXdC8wwKBgQDR8EOuHVw5rVpQIqvQ\n0POyiOF0swFGvKqTkbKn1a6rG8FUkIdG2nXE1Y0FBMEG1LxfRzdEduE7tO0WXJ9F\nDebrv4yU4rfzt3y0lU47tn5sxXP5TUkBAwOjhgvNolIyfa7ifhmGYYQo5+S2EuSv\no8PZ0qDvKR0dLRQsAEdcP69ImwKBgQDIRrUUb457WuXiRNerCpsQbrPWCuFLvO6s\nwWdSAYbw89ZDFdVKPE1+m6NV14J+zMsZ2YpGp/1gyxngvd/blr3Zli9EgEZnQtqP\nCCah6HtyAA7pfwb7tbz1RPQXoW5yQFHwtkS/pbms65A7Xcp117XaPRr8joNdrq97\nIEP5mBKXcwKBgQCBvuKlHeIch0V0lyjmoeyqnyvvSp30UK9/CiGG1mnfuASQtc3U\n/TihkHVZ76k4BovwunuupWXn15ZbJp0MOV5IvpYsgb28Mt8wX8H853lU0ect4RTI\nOkuqaTKsQLBaIhDOS66MvYHHIiHYYO7Smfx1h1YM2LT0jiKUWwu/OGClFwKBgHh2\n71yHbXCNUFE1j3P2QSc1Lz7D9JgV4IpRGtCc0ooEYRChBVZNx18sRqbPplKW5GN8\nEkxFp4adI8em7gurNC64w120uqRJ9iSqhnJE4FvF5TJVkeG9gxcUjq3YEBLw1Viw\nidGs4W49ktfipnETevL2ZlEbd7DV7f9lfP2YlzY5AoGBALdaAJkvKHmVOV2hD+5S\nZb0+PlTxwgfxiHUh9AWRRijPvh8LFiDPuBTII2GfQS2tszqFI6eXYAsX4anXgFnP\n5C4/8lKqjov/vmvdLKTFtyoHJiYeLhxNTgNQxau66KW4d8Bii98AMblV47seai1Z\nfvHfWcGNu+kfD4ybTTwTqo8y\n-----END PRIVATE KEY-----\n",
+  "client_email": "devsunpriya@ace-automated-clean-eobs.iam.gserviceaccount.com",
+  "client_id": "103710459187432234196",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/devsunpriya%40ace-automated-clean-eobs.iam.gserviceaccount.com"
+}

@@ -1,0 +1,411 @@
+May-06-11:51, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-11:55, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-11:58, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:01, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:03, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:05, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:07, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:09, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:10, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:11, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:16, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:18, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB10/Anthem Blue Cross - EOB10, Unclassified, 0.610621225834
+May-06-12:26, data/unlabelled/2019-04-28/SAG-AFTRA Health Plan - EOB4, Unclassified, 0.893669188023
+May-06-12:28, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB11, Unclassified, 0.540797299147
+May-06-15:35, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB12, Unclassified, 0.152516582182
+May-06-15:39, data/unlabelled/2019-04-28/Anthem.15, Unclassified, 0.180639463166
+May-06-15:40, data/unlabelled/2019-04-28/Blue Shield of California - EOB4, Unclassified, 0.162162281573
+May-06-15:45, data/unlabelled/2019-04-28/Cigna Rx - Web EOB2, Unclassified, 0.162920564413
+May-06-15:47, data/unlabelled/2019-04-28/Cigna Rx - Web EOB2, Unclassified, 0.145239494741
+May-06-15:47, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB23, Unclassified, 0.169504093006
+May-06-15:48, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB23, Unclassified, 0.244336251169
+May-06-15:50, data/unlabelled/2019-04-28/Cigna Rx - Web EOB1, Unclassified, 0.16012789309
+May-06-15:52, data/unlabelled/2019-04-28/Blue Shield of California - EOB8, Unclassified, 0.150780327618
+May-06-15:55, data/unlabelled/2019-04-28/Delta Dental - EOB1, Unclassified, 0.209456558029
+May-06-15:56, data/unlabelled/2019-04-28/Cigna Rx - Web EOB1, Unclassified, 0.161256693304
+May-06-15:56, data/unlabelled/2019-04-28/Delta Dental - EOB1, Unclassified, 0.134216882288
+May-06-16:00, data/unlabelled/2019-04-28/Anthem.11, Unclassified, 0.153634667397
+May-06-16:01, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB8, Unclassified, 0.138568451007
+May-06-16:05, data/unlabelled/2019-04-28/Beacon Health Options - EOB2, Unclassified, 0.240325450897
+May-06-16:06, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB10, Unclassified, 0.211110681295
+May-06-16:18, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB2, Unclassified, 0.172239720821
+May-06-16:19, data/unlabelled/2019-04-28/Consolidated Health Plans - EOB1, Unclassified, 0.150165446103
+May-06-16:41, data/unlabelled/2019-04-28/Writers' Guild-Industry Health Fund - EOB9, Unclassified, 0.231843344867
+May-06-16:42, data/unlabelled/2019-04-28/SeeChange Health - EOB6, Unclassified, 0.201593048871
+May-06-18:12, data/unlabelled/2019-04-28/Blue Shield of California - EOB11, Unclassified, 0.263918220997
+May-17-12:13, data/unlabelled/2019-04-28/Blue Shield of California - EOB13, Unclassified, 0.17162694782
+May-17-12:26, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB22, Unclassified, 0.156096212566
+May-17-12:34, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB20, Unclassified, 0.230797670782
+May-17-12:35, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB19, Unclassified, 0.166184231639
+May-17-12:37, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB27, Unclassified, 0.150238379836
+May-17-12:37, data/unlabelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.16435238421
+May-17-12:42, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB21, Unclassified, 0.148486763239
+May-17-12:42, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB23, Unclassified, 0.152852460742
+May-17-12:46, data/unlabelled/2019-04-28/HealthPartners - EOB2, Unclassified, 0.196890331805
+May-17-12:48, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB24, Unclassified, 0.145984381437
+May-17-12:50, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.170841582119
+May-17-12:52, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.137530580163
+May-17-12:54, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.145767189562
+May-17-13:06, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB3, Unclassified, 0.184789061546
+May-17-13:08, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.149153545499
+May-17-13:09, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB26, Unclassified, 0.144577711821
+May-17-13:10, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.177119709551
+May-17-13:19, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.168876960874
+May-17-13:20, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB9, Unclassified, 0.161401599646
+May-17-13:27, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.142273463309
+May-17-13:28, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.184981301427
+May-17-13:32, data/unlabelled/2019-04-28/DGA-Producer Health Plan - EOB18, Unclassified, 0.218021087348
+May-17-13:33, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB17, Unclassified, 0.156288723151
+May-27-06:30, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.189152747393
+May-27-06:42, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.170738599367
+May-27-06:46, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.127177805536
+May-27-06:48, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.188330276145
+May-27-06:55, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.147043993076
+May-27-07:00, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.204617362883
+May-27-07:51, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.144305666288
+May-27-07:54, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.135729044676
+May-27-07:59, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.201603256994
+May-27-08:01, data/labelled/2019-04-28/Delta Dental - EOB12, Unclassified, 0.15719830162
+May-27-10:55, data/labelled/2019-04-28/Anthem Blue Cross - EOB23, Unclassified, 0.221860549102
+May-27-11:06, data/labelled/2019-04-28/Anthem.11, Unclassified, 0.164951677124
+May-27-11:19, data/unlabelled/2019-04-28/Anthem Blue Cross - EOB9, Unclassified, 0.158974565069
+May-27-11:26, data/labelled/2019-04-28/Blue Shield of California - EOB4, Unclassified, 0.191334322095
+May-27-11:32, data/labelled/2019-04-28/Anthem.11, Unclassified, 0.24073078235
+May-27-11:36, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.14404998223
+May-27-11:56, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.181619177262
+May-27-11:59, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.19478370746
+May-27-12:06, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.178544168671
+May-27-12:07, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.148458868265
+May-27-12:09, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.165361955762
+May-27-12:12, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.231287861864
+May-27-12:14, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.145948732893
+May-27-12:17, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.171108533939
+May-28-06:20, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.177054936687
+May-29-04:51, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.150989269217
+May-29-04:55, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.14809371531
+May-29-05:02, data/labelled/2019-04-28/Anthem Blue Cross - EOB1, Unclassified, 0.194593066971
+May-29-06:31, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB1, Unclassified, 0.163350485265
+May-29-06:44, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB10, Unclassified, 0.16864318649
+May-29-06:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB13, Unclassified, 0.150022104383
+May-29-06:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB13, Unclassified, 0.192477780581
+May-29-06:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB13, Unclassified, 0.151686202486
+May-29-07:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB14, Unclassified, 0.157666010352
+May-29-07:03, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB15, Unclassified, 0.16572725429
+May-29-07:18, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB16, Unclassified, 0.173856286066
+May-29-07:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB10, Unclassified, 0.161731352409
+May-29-07:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB10, Unclassified, 0.143357351422
+May-29-07:49, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.211003886329
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.142918003293
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.159813514123
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.167635980707
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.143342353404
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.171232636273
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.16521602124
+May-29-07:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.21437753737
+May-29-07:51, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.197463034652
+May-29-07:52, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.141008421779
+May-29-07:53, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB2, Unclassified, 0.158387625447
+May-29-08:05, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.151220743855
+May-29-08:09, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB2, Unclassified, 0.216818779707
+May-29-08:30, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.176647168895
+May-29-08:30, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.133932133516
+May-29-08:30, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.136216970781
+May-29-08:31, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.208050251007
+May-29-08:32, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.174807821711
+May-29-08:35, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.19271894296
+May-29-08:37, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.1914041092
+May-29-08:38, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.228183026115
+May-29-08:44, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.142154907187
+May-29-08:45, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.23344071375
+May-29-08:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.152861335448
+May-29-08:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.153443387577
+May-29-08:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.148292013577
+May-29-08:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.226663189275
+May-29-09:00, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB5, Unclassified, 0.166861793399
+May-29-09:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB5, Unclassified, 0.184584647417
+May-29-09:05, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB23, Unclassified, 0.137786042232
+May-29-09:07, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB3, Unclassified, 0.167137769716
+May-29-09:08, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB4, Unclassified, 0.194633329144
+May-29-09:09, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB5, Unclassified, 0.139882564545
+May-29-09:11, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB6, Unclassified, 0.148574459553
+May-29-09:33, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.136984878778
+May-29-09:42, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.166980897387
+May-29-09:43, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB8, Unclassified, 0.140814140439
+May-29-09:44, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB9, Unclassified, 0.160839836796
+May-29-10:06, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.14620120426
+May-29-10:08, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB9, Unclassified, 0.14160583516
+May-29-10:14, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.130968768398
+May-29-10:31, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB1, Unclassified, 0.200461858511
+May-29-10:35, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB14, Unclassified, 0.152528789181
+May-29-10:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB14, Unclassified, 0.224166066601
+May-29-10:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB14, Unclassified, 0.130113897415
+May-29-10:37, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB10, Unclassified, 0.152846254905
+May-29-10:38, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB10, Unclassified, 0.142108842731
+May-29-10:39, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB11, Unclassified, 0.142093849679
+May-29-10:41, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB13, Unclassified, 0.150884324312
+May-29-10:42, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB13, Unclassified, 0.139871625106
+May-29-10:44, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB15, Unclassified, 0.13542125546
+May-29-10:46, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.170303559303
+May-29-10:47, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB2, Unclassified, 0.179631710052
+May-29-10:51, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.136349429305
+May-29-10:52, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.163171594031
+May-29-10:55, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB16, Unclassified, 0.163558791791
+May-29-10:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.229373884698
+May-29-10:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.152414023876
+May-29-11:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.201568190257
+May-29-11:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.188190817833
+May-29-11:38, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB9, Unclassified, 0.172026293476
+May-29-11:48, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.19748647511
+May-29-11:49, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.223779409193
+May-29-11:50, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.156355407089
+May-29-11:59, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.132829979062
+May-29-12:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.154447139241
+May-29-12:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB18, Unclassified, 0.137537355535
+May-29-12:03, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.161264612125
+May-29-12:04, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB17, Unclassified, 0.180546926764
+May-29-12:05, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB16, Unclassified, 0.173169523478
+May-29-12:06, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB19, Unclassified, 0.16478916506
+May-29-12:08, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB2, Unclassified, 0.151549679729
+May-29-12:08, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB2, Unclassified, 0.138365854438
+May-29-12:10, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.184104181826
+May-29-12:10, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.189203838507
+May-29-12:16, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.177837376793
+May-29-12:16, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.14126950254
+May-29-12:20, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.157903032998
+May-29-12:20, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.151650925477
+May-29-12:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB21, Unclassified, 0.137861418227
+May-29-12:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB22, Unclassified, 0.145876437426
+May-29-13:00, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB3, Unclassified, 0.142854450004
+May-29-13:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB5, Unclassified, 0.174517009939
+May-29-13:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB23, Unclassified, 0.163196007793
+May-29-13:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB8, Unclassified, 0.260235641684
+May-29-13:02, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB6, Unclassified, 0.153036510944
+May-29-13:02, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB7, Unclassified, 0.149937788645
+May-29-13:02, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB9, Unclassified, 0.141603023807
+May-29-13:05, data/unlabelled/2019-05-29/Blue Shield of California - EOB1, Unclassified, 0.15544389685
+May-29-13:06, data/unlabelled/2019-05-29/Blue Shield of California - EOB10, Unclassified, 0.144174787402
+May-29-13:07, data/unlabelled/2019-05-29/Blue Shield of California - EOB11, Unclassified, 0.200261607766
+May-29-13:07, data/unlabelled/2019-05-29/Blue Shield of California - EOB1, Unclassified, 0.244537557165
+May-29-13:08, data/unlabelled/2019-05-29/Beacon Health Options - EOB4, Unclassified, 0.152773650984
+May-29-13:08, data/unlabelled/2019-05-29/Blue Shield of California - EOB12, Unclassified, 0.227589835723
+May-29-13:08, data/unlabelled/2019-05-29/Blue Shield of California - EOB10, Unclassified, 0.251738064668
+May-29-13:10, data/unlabelled/2019-05-29/Blue Shield of California - EOB1, Unclassified, 0.211827342709
+May-29-13:11, data/unlabelled/2019-05-29/Beacon Health Options - EOB4, Unclassified, 0.160791220764
+May-29-13:11, data/unlabelled/2019-05-29/Blue Shield of California - EOB11, Unclassified, 0.212863003214
+May-29-13:11, data/unlabelled/2019-05-29/Blue Shield of California - EOB12, Unclassified, 0.154575183988
+May-29-13:11, data/unlabelled/2019-05-29/Blue Shield of California - EOB10, Unclassified, 0.155239577998
+May-29-13:14, data/unlabelled/2019-05-29/Blue Shield of California - EOB13, Unclassified, 0.186822374662
+May-29-13:14, data/unlabelled/2019-05-29/Blue Shield of California - EOB14, Unclassified, 0.170166527232
+May-29-13:14, data/unlabelled/2019-05-29/Blue Shield of California - EOB15, Unclassified, 0.185805385311
+May-29-13:14, data/unlabelled/2019-05-29/Blue Shield of California - EOB17, Unclassified, 0.16546715796
+May-29-13:15, data/unlabelled/2019-05-29/Blue Shield of California - EOB3, Unclassified, 0.187786012888
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB5, Unclassified, 0.137135583907
+May-29-13:16, data/unlabelled/2019-05-29/Cigna Rx - Web EOB1, Unclassified, 0.157944694161
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB6, Unclassified, 0.152176504334
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB20, Unclassified, 0.168822204073
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB2, Unclassified, 0.173097637567
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB7, Unclassified, 0.148653179407
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB4, Unclassified, 0.230740502477
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB8, Unclassified, 0.150793284178
+May-29-13:16, data/unlabelled/2019-05-29/Blue Shield of California - EOB9, Unclassified, 0.130441183845
+May-29-13:17, data/unlabelled/2019-05-29/Cigna Rx - Web EOB2, Unclassified, 0.187372796237
+May-29-13:17, data/unlabelled/2019-05-29/Cigna Dental - EOB1, Unclassified, 0.150113814643
+May-29-13:29, data/unlabelled/2019-05-29/DGA-Producer Health Plan - EOB1, Unclassified, 0.154171317816
+May-30-02:40, data/unlabelled/2019-05-30/DGA-Producer Health Plan - EOB17, Unclassified, 0.136938378215
+May-30-02:42, data/unlabelled/2019-05-30/DGA-Producer Health Plan - EOB17, Unclassified, 0.157661393285
+May-30-02:51, data/unlabelled/2019-05-30/DGA-Producer Health Plan - EOB17, Unclassified, 0.156603246927
+May-30-03:00, data/unlabelled/2019-05-30/Delta Dental - EOB1, Unclassified, 0.147192311784
+May-30-03:01, data/unlabelled/2019-05-30/Delta Dental - EOB11, Unclassified, 0.181966851155
+May-30-03:01, data/unlabelled/2019-05-30/Delta Dental - EOB13, Unclassified, 0.176362464825
+May-30-03:01, data/unlabelled/2019-05-30/Delta Dental - EOB14, Unclassified, 0.151621758938
+May-30-03:11, data/unlabelled/2019-05-30/Delta Dental - EOB11, Unclassified, 0.147109071414
+May-30-03:11, data/unlabelled/2019-05-30/Delta Dental - EOB13, Unclassified, 0.189308280746
+May-30-03:11, data/unlabelled/2019-05-30/Delta Dental - EOB14, Unclassified, 0.160197943449
+May-30-03:14, data/unlabelled/2019-05-30/Delta Dental - EOB13, Unclassified, 0.1548512429
+May-30-03:14, data/unlabelled/2019-05-30/Delta Dental - EOB14, Unclassified, 0.233465060592
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB11, Unclassified, 0.144437814752
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB5, Unclassified, 0.172647661396
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB12, Unclassified, 0.210106391046
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB3, Unclassified, 0.177387902141
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB2, Unclassified, 0.185351416469
+May-30-03:15, data/unlabelled/2019-05-30/Delta Dental - EOB1, Unclassified, 0.180309409897
+May-30-03:16, data/unlabelled/2019-05-30/Delta Dental - EOB4, Unclassified, 0.164294057272
+May-30-03:36, data/unlabelled/2019-05-30/Delta Dental - EOB7, Unclassified, 0.142913599312
+May-30-03:37, data/unlabelled/2019-05-30/HealthPartners - EOB1, Unclassified, 0.175245905916
+May-30-03:37, data/unlabelled/2019-05-30/Delta Dental - EOB9, Unclassified, 0.148793567504
+May-30-03:37, data/unlabelled/2019-05-30/Delta Dental - EOB8, Unclassified, 0.151864425838
+May-30-03:40, data/unlabelled/2019-05-30/Humana Insurance Company - EOB2, Unclassified, 0.16189737618
+May-30-03:40, data/unlabelled/2019-05-30/Motion Picture Industry - EOB12, Unclassified, 0.15205822885
+May-30-03:40, data/unlabelled/2019-05-30/Humana Insurance Company - EOB1, Unclassified, 0.140280488133
+May-30-03:41, data/unlabelled/2019-05-30/Motion Picture Industry - EOB10, Unclassified, 0.140761549274
+May-30-03:41, data/unlabelled/2019-05-30/Motion Picture Industry - EOB14, Unclassified, 0.174480199814
+May-30-03:41, data/unlabelled/2019-05-30/Motion Picture Industry - EOB11, Unclassified, 0.202202255527
+May-30-03:41, data/unlabelled/2019-05-30/Motion Picture Industry - EOB13, Unclassified, 0.175882463654
+May-30-03:41, data/unlabelled/2019-05-30/Medicare Part B - EOB1, Unclassified, 0.134890629695
+May-30-03:43, data/unlabelled/2019-05-30/Humana Insurance Company - EOB2, Unclassified, 0.178295400739
+May-30-03:43, data/unlabelled/2019-05-30/Motion Picture Industry - EOB12, Unclassified, 0.159316018224
+May-30-03:43, data/unlabelled/2019-05-30/Motion Picture Industry - EOB10, Unclassified, 0.139189461867
+May-30-03:44, data/unlabelled/2019-05-30/Motion Picture Industry - EOB11, Unclassified, 0.172808155417
+May-30-03:44, data/unlabelled/2019-05-30/Motion Picture Industry - EOB13, Unclassified, 0.200052226583
+May-30-03:44, data/unlabelled/2019-05-30/Humana Insurance Company - EOB1, Unclassified, 0.185853040218
+May-30-03:44, data/unlabelled/2019-05-30/Motion Picture Industry - EOB14, Unclassified, 0.13577538232
+May-30-03:44, data/unlabelled/2019-05-30/Medicare Part B - EOB1, Unclassified, 0.163701951504
+May-30-03:48, data/unlabelled/2019-05-30/Motion Picture Industry - EOB15, Unclassified, 0.145594328642
+May-30-03:48, data/unlabelled/2019-05-30/Motion Picture Industry - EOB7, Unclassified, 0.159583414594
+May-30-03:48, data/unlabelled/2019-05-30/Motion Picture Industry - EOB6, Unclassified, 0.176044886311
+May-30-03:48, data/unlabelled/2019-05-30/MyMedicare - EOB1, Unclassified, 0.149604707956
+May-30-03:48, data/unlabelled/2019-05-30/Motion Picture Industry - EOB9, Unclassified, 0.174200877547
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB16, Unclassified, 0.174623588721
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB14, Unclassified, 0.177013282975
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB17, Unclassified, 0.134134625395
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB11, Unclassified, 0.191778247555
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB15, Unclassified, 0.154171670477
+May-30-03:53, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB18, Unclassified, 0.161083812515
+May-30-04:14, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB19, Unclassified, 0.218900750081
+May-30-04:14, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB2, Unclassified, 0.190313508113
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB20, Unclassified, 0.142093320688
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB22, Unclassified, 0.187155529857
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB21, Unclassified, 0.152617792288
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB23, Unclassified, 0.143645952145
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB25, Unclassified, 0.167482316494
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB27, Unclassified, 0.141353756189
+May-30-04:15, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB26, Unclassified, 0.170158982277
+May-30-04:18, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB3, Unclassified, 0.14049564302
+May-30-04:18, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB4, Unclassified, 0.163882439335
+May-30-04:18, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB5, Unclassified, 0.144168411692
+May-30-04:18, data/unlabelled/2019-05-30/SeeChange Health - EOB1, Unclassified, 0.165554210544
+May-30-04:18, data/unlabelled/2019-05-30/SeeChange Health - EOB2, Unclassified, 0.158239856362
+May-30-04:20, data/unlabelled/2019-05-30/SeeChange Health - EOB6, Unclassified, 0.136448810498
+May-30-04:21, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB14, Unclassified, 0.161476095517
+May-30-04:21, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB15, Unclassified, 0.204575071732
+May-30-04:21, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB10, Unclassified, 0.137214771339
+May-30-04:21, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB13, Unclassified, 0.135846416155
+May-30-05:15, data/unlabelled/2019-05-30/DGA-Producer Health Plan - EOB17, Unclassified, 0.156192526221
+May-30-05:26, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.168983037273
+May-30-05:31, data/unlabelled/2019-05-30/SeeChange Health - EOB6, Unclassified, 0.180287758509
+May-30-05:31, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB14, Unclassified, 0.13503052791
+May-30-05:31, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB15, Unclassified, 0.16678883632
+May-30-05:31, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB17, Unclassified, 0.251897250613
+May-30-05:31, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB16, Unclassified, 0.145433828235
+May-30-05:32, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB13, Unclassified, 0.184071436524
+May-30-05:32, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB12, Unclassified, 0.134938150644
+May-30-05:32, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB8, Unclassified, 0.168528869748
+May-30-05:48, data/unlabelled/2019-05-30/SAG-AFTRA Health Plan - EOB11, Unclassified, 0.138512705763
+May-30-05:50, data/unlabelled/2019-05-30/Anthem Blue Cross - EOB1, Unclassified, 0.129183256626
+May-30-05:51, data/unlabelled/2019-05-30/Anthem Blue Cross - EOB12, Unclassified, 0.158135217699
+May-30-05:51, data/unlabelled/2019-05-30/Anthem Blue Cross - EOB10, Unclassified, 0.140962996085
+May-30-05:51, data/unlabelled/2019-05-30/Anthem Blue Cross - EOB11, Unclassified, 0.184001502891
+May-30-06:49, data/unlabelled/2019-05-30/Delta Dental - EOB11, Unclassified, 0.157408247391
+May-30-08:04, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.165047690272
+May-30-08:05, data/unlabelled/2019-05-30/SeeChange Health - EOB6, Unclassified, 0.212653016051
+May-30-08:05, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB10, Unclassified, 0.15303106606
+May-30-08:06, data/unlabelled/2019-05-30/SeeChange Health - EOB6, Unclassified, 0.205555533369
+May-30-08:07, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.142255574465
+May-30-08:07, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB10, Unclassified, 0.186403693897
+May-30-08:08, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB12, Unclassified, 0.152800753713
+May-30-08:08, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB13, Unclassified, 0.19184324642
+May-30-08:08, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB14, Unclassified, 0.17698426048
+May-30-08:08, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB15, Unclassified, 0.151671345035
+May-30-08:44, data/unlabelled/2019-05-30/Writers' Guild-Industry Health Fund - EOB16, Unclassified, 0.175490657489
+May-31-07:41, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.171171590686
+May-31-08:14, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.139983817935
+May-31-08:15, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.174141913652
+May-31-08:53, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.141716683904
+May-31-08:54, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.165300652385
+May-31-08:56, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.166783670584
+May-31-09:04, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.179409528772
+May-31-09:16, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.153800999125
+May-31-09:18, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.141978040338
+May-31-10:02, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.242109268904
+May-31-10:03, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.137184649706
+May-31-10:09, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.204459160566
+May-31-10:53, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.173192779223
+May-31-10:54, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.146522114674
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB3, Unclassified, 0.143585808575
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB6, Unclassified, 0.156758226454
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB9, Unclassified, 0.151122137904
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB10, Unclassified, 0.133426718414
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB11, Unclassified, 0.192462675273
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB14, Unclassified, 0.15423181653
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB22, Unclassified, 0.156025849283
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB18, Unclassified, 0.143189195544
+May-31-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB21, Unclassified, 0.194874145091
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB3, Unclassified, 0.145006157458
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB6, Unclassified, 0.149731084704
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB9, Unclassified, 0.160817228258
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB10, Unclassified, 0.167361631989
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB11, Unclassified, 0.150082238019
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB14, Unclassified, 0.130775153637
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB22, Unclassified, 0.144097283483
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB18, Unclassified, 0.147191379219
+Jun-01-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB21, Unclassified, 0.146125279367
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB3, Unclassified, 0.163253098726
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB6, Unclassified, 0.132497034967
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB9, Unclassified, 0.198164217174
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB10, Unclassified, 0.143860504031
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB11, Unclassified, 0.13296739012
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB14, Unclassified, 0.169086933136
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB22, Unclassified, 0.158213071525
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB18, Unclassified, 0.204913876951
+Jun-02-17:31, data/labelled/2019-05-31/Anthem Blue Cross - EOB21, Unclassified, 0.20801012218
+Jun-03-04:53, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.154773385988
+Jun-03-04:56, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.156823313899
+Jun-03-04:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.165065356427
+Jun-03-04:59, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.162724888987
+Jun-03-05:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.151777159837
+Jun-03-05:06, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.321817477544
+Jun-03-05:23, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.178724851873
+Jun-03-05:59, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.161510633098
+Jun-03-06:01, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.211991012096
+Jun-03-06:03, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.156378797359
+Jun-03-06:09, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.192628739609
+Jun-03-06:12, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.206750914454
+Jun-03-06:16, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.170920658443
+Jun-03-06:18, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.204930269056
+Jun-03-06:19, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.193590935734
+Jun-03-06:25, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.293310436938
+Jun-03-06:27, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.151606374317
+Jun-03-06:29, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.143231256141
+Jun-03-06:31, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.132621945606
+Jun-03-06:33, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.150692141718
+Jun-03-06:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.296497093307
+Jun-03-06:39, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.176474254992
+Jun-03-06:41, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.206988192267
+Jun-03-06:42, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.293911255068
+Jun-03-06:44, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.182123031881
+Jun-03-06:47, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.226092249155
+Jun-03-06:52, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.140855105387
+Jun-03-06:55, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.191420667701
+Jun-03-06:58, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.163995057344
+Jun-03-07:00, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.14034452041
+Jun-03-07:08, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.145261892014
+Jun-03-07:15, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.239877318343
+Jun-03-07:16, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.163555516137
+Jun-03-07:18, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.219138657053
+Jun-03-07:20, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.167128953669
+Jun-03-07:24, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.182746772965
+Jun-03-07:28, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.22412499951
+Jun-03-07:32, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.254041158491
+Jun-03-07:35, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.168260321021
+Jun-03-07:36, data/unlabelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.156071028776
+Jun-03-07:40, data/labelled/2019-05-29/Anthem Blue Cross - EOB20, Unclassified, 0.148355482353
+Jun-03-07:45, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.14427750806
+Jun-03-07:51, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.148180415233
+Jun-03-07:52, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.164724255602
+Jun-03-07:57, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.13901356856
+Jun-03-08:32, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.149228205283
+Jun-03-08:35, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.163389101624
+Jun-03-08:41, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.184119522572
+Jun-03-08:42, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.189370974898
+Jun-03-08:44, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.177662114302
+Jun-03-09:28, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.156967108448
+Jun-03-09:34, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.142831315597
+Jun-03-09:44, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.136351386706
+Jun-03-09:52, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB10, Unclassified, 0.150877790792
+Jun-03-09:54, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB13, Unclassified, 0.178124085069
+Jun-03-10:03, data/labelled/2019-05-31/Blue Shield of California - EOB12, Unclassified, 0.129396217565
+Jun-03-10:05, data/labelled/2019-05-31/Blue Shield of California - EOB12, Unclassified, 0.203693869213
+Jun-03-10:06, data/labelled/2019-05-31/Blue Shield of California - EOB12, Unclassified, 0.148023672402
+Jun-03-10:08, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB1, Unclassified, 0.152587048709
+Jun-03-10:14, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB12, Unclassified, 0.140428841114
+Jun-03-10:15, data/labelled/2019-05-31/Writers' Guild-Industry Health Fund - EOB12, Unclassified, 0.158266996344
