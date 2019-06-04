@@ -1,5 +1,5 @@
 #imports
-#from pdf2jpg import export
+from pdf2jpg import export
 from multiprocessing import Pool, Process, Queue
 import glob, os, time
 from itertools import product

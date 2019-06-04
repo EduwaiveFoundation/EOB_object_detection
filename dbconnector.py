@@ -29,7 +29,7 @@ class DataStore:
         
     def retrieve(self):
         #self.query.add_filter('EOBType','>','NULL')
-        results = list(self.query.fetch(limit=1))
+        results = list(self.query.fetch())
         label_map = []
         for data in results:
             if 'EOBType' in data.keys():
