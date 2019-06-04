@@ -1,0 +1,7 @@
+trainer/training_scripts/data/*
+*.pyc
+trainer/training_scripts/frozen_graph_exporter/models/
+trainer/training_scripts/frozen_graph_exporter/test_frozenv1/
+trainer/training_scripts/test_frozenv1/
+trainer/training_scripts/data/
+
